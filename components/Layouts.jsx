@@ -8,7 +8,7 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Layout({ children, name }) {
-  const title = `Islamiah - ${name}`
+  const title = `Masjid Al-Barokah - ${name}`
 
   return (
     <div className="">

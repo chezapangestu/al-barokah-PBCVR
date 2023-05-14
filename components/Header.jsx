@@ -5,7 +5,7 @@ export default function Header() {
     <header className="bg-rose-500 p-3 flex justify-between items-center text-rose-50">
       <div>
         <Link href="/" className="text-lg font-bold">
-          Islamiah
+          CLock Masjid Al Barokah
         </Link>
       </div>
 
