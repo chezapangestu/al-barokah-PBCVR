@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import ErrorCard from '../components/ErrorCards'
 import JadwalSholatCard from '../components/JadwalSholatCard'
 import Layout from '../components/Layouts'
@@ -7,6 +8,10 @@ import Tracker from '../components/Tracker'
 import { coords } from '../constants/location'
 import { indonesianDate, indonesianName } from '../utils/jadwal-sholat'
 import LimaWaktuShalat from '../components/LimaWaktuShalat'
+import logoAlBarokah from '../public/pict/logo-al-barokah-192x192.png'
+
+// import useSound from 'use-sound'
+// import beepSfx from '../public/alarm.mp3'
 
 export default function JadwalSolatHariIni() {
   // Memformat tanggal
@@ -25,6 +30,7 @@ export default function JadwalSolatHariIni() {
   })
 
   const [displayMap, setDisplayMap] = useState(false)
+  const [displayIqomah, setDisplayIqomah] = useState(false)
 
   const [today, setToday] = useState(Number(dd))
   const [tanggal, setTanggal] = useState(indonesianDate())
@@ -107,7 +113,7 @@ export default function JadwalSolatHariIni() {
 
   // Memutar audio adzan
   useEffect(() => {
-    const adzan = document.getElementById('adzan')
+    const adzan = document.getElementById('short')
     document.body.onclick = () => {
       adzan.play()
       adzan.pause()
@@ -117,16 +123,29 @@ export default function JadwalSolatHariIni() {
     switch (name) {
       case 'Fajr':
       case 'Dhuhr':
+        if (countDown === '00:00:00') {
+          adzan.play()
+        }
       case 'Asr':
+        if (countDown === '01:38:50') {
+          adzan.play()
+        }
       case 'Maghrib':
       case 'Isha':
-        if (countDown === '00:00:00') adzan.play()
+        if (countDown === '00:00:00') {
+          setDisplayIqomah(!displayIqomah)
+          adzan.play()
+        }
+
         break
+      // adzan.play()
 
       default:
         break
     }
   })
+
+  // const [play] = useSound(beepSfx)
 
   return (
     <Layout name="Jadwal Sholat">
@@ -135,8 +154,9 @@ export default function JadwalSolatHariIni() {
         <ErrorCard message="Gagal memuat data, silakan periksa koneksi internet Anda lalu refresh halaman ini." />
       )}
 
+      {/* Set Display Map */}
       <div
-        className={`fixed inset-0 p-3 bg-white duration-300 ${
+        className={`fixed inset-0 p-3 z-20 bg-white duration-300 ${
           displayMap ? 'visible' : 'invisible'
         }`}
       >
@@ -145,78 +165,124 @@ export default function JadwalSolatHariIni() {
 
         <Tracker callback={(coords) => setCoordinates(coords)} />
 
-        <button
-          onClick={() => setDisplayMap(!displayMap)}
-          className="px-3 py-2 rounded-lg bg-sky-500 text-white"
-        >
-          Simpan
-        </button>
+        <div className="space-x-3">
+          <button
+            onClick={() => setDisplayMap(!displayMap)}
+            className="px-3 py-2 rounded-lg bg-sky-500 text-white"
+          >
+            Simpan
+          </button>
+          <button
+            onClick={() => setDisplayMap(!displayMap)}
+            className="px-3 py-2 rounded-lg bg-zinc-500 text-white"
+          >
+            Kembali
+          </button>
+        </div>
       </div>
+      {/* End Of Display Map */}
+
+      {/* Set Display Iqomah */}
+      <div
+        className={`fixed inset-0 p-52 z-40 bg-red-500 opacity-10 duration-300 ${
+          displayIqomah ? 'visible' : 'invisible'
+        }`}
+      >
+        <h1>This is IQOMAH START NOW</h1>
+      </div>
+      {/* End Of Display Iqomah */}
 
       {jadwalSholat && (
         <>
           {jadwalSholat.date && (
             <>
               {/* MAIN JAM */}
-              <div>
-                <h1 className="text-3xl font-bold">
-                  Jadwal Sholat Masjid Al-Barokah
-                </h1>
-                <p className="font-medium">Pesona Bali City View Residence</p>
-                <p className="flex items-center font-black text-7xl py-10">
-                  {jam}
-                </p>
-                <div className="flex items-center space-x-5">
-                  <p className="flex items-center font-semibold text-3xl">
-                    {tanggal}
-                  </p>
-                  <button
-                    onClick={() => setDisplayMap(!displayMap)}
-                    className=" h-6 w-auto px-2 rounded-lg bg-sky-500 text-white"
-                    title="Klik untuk mengatur lokasi sesuai keinginan"
-                  >
-                    Update lokasi
-                  </button>
-                </div>
-                <p className="flex items-center font-medium text-2xl">
+              <div className="bg-white dark:bg-black-900 fixed w-full top-0 left-0 border-b border-gray-200 dark:border-gray-600 backdrop-filter backdrop-blur-lg bg-opacity-50 transition duration-300 ease-in-out">
+                <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 grid-cols-3 gap-3 px-[7%] py-10">
+                  <div>
+                    <p className="flex items-center font-semibold text-3xl ">
+                      {tanggal}
+                    </p>
+                    <p className="flex items-center font-medium text-2xl">
+                      {jadwalSholat.date.hijri.day}{' '}
+                      {jadwalSholat.date.hijri.month.en}{' '}
+                      {jadwalSholat.date.hijri.year}
+                    </p>
+                    <div className="flex items-center mt-5">
+                      <button
+                        onClick={() => setDisplayMap(!displayMap)}
+                        className=" h-6 w-auto px-2 rounded-lg bg-main-500 text-white text-xs"
+                        title="Klik untuk mengatur lokasi sesuai keinginan"
+                      >
+                        Update lokasi
+                      </button>
+                    </div>
+                  </div>
+                  <div className="flex">
+                    <div className="max-w-[70px]">
+                      <Image
+                        src={logoAlBarokah}
+                        height={5}
+                        width={150}
+                        alt="logo-al-barokah-pbcvr"
+                      />
+                    </div>
+                    <div>
+                      <h1 className="text-4xl font-black">Masjid Al-Barokah</h1>
+                      <p className="font-medium text-xl">
+                        Pesona Bali City View Residence
+                      </p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-black text-7xl">{jam}</p>
+                  </div>
+
+                  {/* <p className="flex items-center font-medium text-2xl">
                   {jadwalSholat.date.hijri.day}{' '}
                   {jadwalSholat.date.hijri.month.en}{' '}
                   {jadwalSholat.date.hijri.year}
-                </p>
-              </div>
-              {/* AKHIR MAIN JAM */}
+                </p> */}
+                </div>
 
-              {/* <p>Berikut jadwal sholat hari ini.</p> */}
+                {/* AKHIR MAIN JAM */}
 
-              <div className="flex space-x-2 py-10">
+                {/* <p>Berikut jadwal sholat hari ini.</p> */}
+
                 {/* TIMEZONE */}
                 {/* <p className="flex items-center mt-3">
                   {jadwalSholat.meta.timezone}
                 </p> */}
                 {/* AKHIR TIMEZONE */}
-                <div className="flex space-x-2 items-center">
-                  <p className="text-2xl">Berikutnya</p>
-                  <p className="text-2xl font-bold">{next.countDown}</p>
-                </div>
-                <div>
-                  <p className="text-2xl">menuju </p>
+
+                {/* <div>
+                  <p className="text-2xl">menuju</p>
                   <p className="text-2xl font-bold">
                     {indonesianName(next.name)}
                   </p>
-                </div>
-              </div>
+                </div> */}
 
-              {/* <p className="py-10 font-bold text-2xl">
+                {/* <p className="py-10 font-bold text-2xl">
                   Berikutnya <p></p> lagi menuju{' '}
                   <strong>{indonesianName(next.name)}</strong>
                 </p> */}
+              </div>
             </>
           )}
 
           {/* Looping jadwal sholat */}
           {jadwalSholat.timings && (
-            <div className="grid lg:grid-cols-7 md:grid-cols-7 sm:grid-cols-1 grid-cols-1 gap-3">
-              {/* {Object.keys(jadwalSholat.timings).map((key, index) => (
+            <div className="fixed bottom-0 pb-20 px-[7%] py-10 flex flex-col space-y-5">
+              <div className="flex space-x-2 items-center p-10 bg-gray-400 max-w-sm rounded-lg">
+                {/* <button onClick={play}>Boop!</button> */}
+                <p className="text-3xl font-bold">
+                  {indonesianName(next.name)}
+                </p>
+                <p className="text-3xl font-bold ">-{next.countDown}</p>
+              </div>
+
+              <div className="grid lg:grid-cols-7 md:grid-cols-7 sm:grid-cols-1 grid-cols-1 gap-3">
+                {/* {Object.keys(jadwalSholat.timings).map((key, index) => (
                 <JadwalSholatCard
                   key={index}
                   sholat={{
@@ -226,7 +292,7 @@ export default function JadwalSolatHariIni() {
                   }}
                 />
               ))} */}
-              {/* <div className="flex">
+                {/* <div className="flex">
                 <div className="p-10">
                   <p>Imsak</p>
                   {jadwalSholat.timings.Imsak}
@@ -255,35 +321,43 @@ export default function JadwalSolatHariIni() {
                   <p>Isha</p>
                   {jadwalSholat.timings.Isha}
                 </div> */}
-              <LimaWaktuShalat
-                title={'Imsak'}
-                value={jadwalSholat.timings.Imsak}
-              />
-              <LimaWaktuShalat
-                title={'Subuh'}
-                value={jadwalSholat.timings.Fajr}
-              />
-              <LimaWaktuShalat
-                title={'Isyraq'}
-                value={jadwalSholat.timings.Sunrise}
-              />
-              <LimaWaktuShalat
-                title={'Dzuhur'}
-                value={jadwalSholat.timings.Dhuhr}
-              />
-              <LimaWaktuShalat
-                title={'Ashar'}
-                value={jadwalSholat.timings.Asr}
-              />
-              <LimaWaktuShalat
-                title={'Maghrib'}
-                value={jadwalSholat.timings.Maghrib}
-              />
-              <LimaWaktuShalat
-                title={"Isya'"}
-                value={jadwalSholat.timings.Isha}
-              />
-              {/* </div> */}
+                <LimaWaktuShalat
+                  title={'Imsak'}
+                  value={jadwalSholat.timings.Imsak}
+                  variant={'bg-imsak'}
+                />
+                <LimaWaktuShalat
+                  title={'Subuh'}
+                  value={jadwalSholat.timings.Fajr}
+                  variant={'bg-subuh'}
+                />
+                <LimaWaktuShalat
+                  title={'Isyraq'}
+                  value={jadwalSholat.timings.Sunrise}
+                  variant={'bg-isyraq'}
+                />
+                <LimaWaktuShalat
+                  title={'Dzuhur'}
+                  value={jadwalSholat.timings.Dhuhr}
+                  variant={'bg-dzuhur'}
+                />
+                <LimaWaktuShalat
+                  title={'Ashar'}
+                  value={jadwalSholat.timings.Asr}
+                  variant={'bg-ashar'}
+                />
+                <LimaWaktuShalat
+                  title={'Maghrib'}
+                  value={jadwalSholat.timings.Maghrib}
+                  variant={'bg-maghrib'}
+                />
+                <LimaWaktuShalat
+                  title={"Isya'"}
+                  value={jadwalSholat.timings.Isha}
+                  variant={'bg-isya'}
+                />
+                {/* </div> */}
+              </div>
             </div>
           )}
         </>
@@ -294,7 +368,16 @@ export default function JadwalSolatHariIni() {
         controls
         src="/adzan.mp3"
         className="hidden"
-        loading="lazy"
+        // loading="lazy"
+        preload="none"
+      />
+      <audio
+        id="short"
+        controls
+        src="/short.mp3"
+        className="hidden"
+        // loading="lazy"
+        preload="none"
       />
     </Layout>
   )

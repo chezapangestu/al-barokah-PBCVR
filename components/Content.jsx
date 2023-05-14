@@ -1,3 +1,3 @@
 export default function Content({ children }) {
-  return <div className="px-[7%] py-10">{children}</div>
+  return <div className="">{children}</div>
 }

@@ -56,7 +56,7 @@ export default function Kalender() {
 
   return (
     <Layout name="Kalender">
-      <h1 className="text-3xl font-bold text-sky-500 mb-3">Kalender</h1>
+      <h1 className="text-3xl font-bold text-main-500 mb-3">Kalender</h1>
 
       <div className="text-center mb-3">
         <p>
@@ -78,7 +78,7 @@ export default function Kalender() {
         <div className="overflow-x-auto mx-auto max-w-max">
           <table className="table-fixed">
             <thead>
-              <tr className="divide-x text-sky-500">
+              <tr className="divide-x text-main-500">
                 <th className="p-3">Tanggal</th>
                 {Object.keys(calendar[0].timings).map((name) => (
                   <th className="p-3">{name}</th>
@@ -91,8 +91,8 @@ export default function Kalender() {
                   key={i}
                   className={`font-semibold whitespace-nowrap ${
                     date.gregorian.day === String(d.getDate()).padStart(2, '0')
-                      ? 'bg-sky-400 text-white'
-                      : 'odd:bg-sky-100'
+                      ? 'bg-main-400 text-white'
+                      : 'odd:bg-main-100'
                   }`}
                 >
                   <td className="p-3">

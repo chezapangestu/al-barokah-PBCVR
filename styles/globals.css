@@ -7,7 +7,30 @@ html {
 }
 
 strong {
-  color: #0ea5e9;
+  color: #d3ba90;
+}
+
+/* BG - Color - 5 Times Prayer */
+.imsak-color {
+  background-color: #264653;
+}
+.subuh-color {
+  background-color: #287271;
+}
+.isyraq-color {
+  background-color: #2a9d8f;
+}
+.dzuhur-color {
+  background-color: #e9c46a;
+}
+.ashar-color {
+  background-color: #f4a261;
+}
+.maghrib-color {
+  background-color: #ee8959;
+}
+.isya-color {
+  background-color: #e76f51;
 }
 
 /* @font-face {
