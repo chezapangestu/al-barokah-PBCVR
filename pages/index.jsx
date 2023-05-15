@@ -59,7 +59,11 @@ export default function JadwalSolatHariIni() {
       .then((res) => res.json())
       .then(({ data }) => {
         delete data.timings['Sunset'] // Menghapus waktu sunset, karna Sunset === Maghrib
+        delete data.timings['Firstthird'] // Menghapus waktu Firstthird
+        delete data.timings['Lastthird'] // Menghapus waktu Lastthird
+        // delete data.timings['Midnight'] // Menghapus waktu Midnight "TAHAJUD"
         // console.log(data.timings['Sunset'])
+        // console.log(data)
         setJadwalSholat(data)
         setLoading(false)
       })

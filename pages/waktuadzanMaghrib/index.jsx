@@ -16,7 +16,7 @@ export default function WaktuadzanMaghrib() {
     alarmRef.current.play()
     setTimeout(() => {
       router.push('/iqomahMaghrib')
-    }, 10000)
+    }, 50000)
   }, [])
 
   return (

@@ -16,7 +16,7 @@ export default function WaktuadzanIsya() {
     alarmRef.current.play()
     setTimeout(() => {
       router.push('/iqomahIsya')
-    }, 10000)
+    }, 50000)
   }, [])
 
   return (

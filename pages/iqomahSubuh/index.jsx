@@ -6,7 +6,7 @@ import ModalSetting from '../../components/ModalSetting'
 import Navigation from '../../components/Navigation'
 
 export default function IqomahSubuh() {
-  const [pomodoro, setPomodoro] = useState(1)
+  const [pomodoro, setPomodoro] = useState(10)
   const [shortBreak, setShortBreak] = useState(5)
   const [longBreak, setLongBreak] = useState(7)
   const [seconds, setSecond] = useState(0)
