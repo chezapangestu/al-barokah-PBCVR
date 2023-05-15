@@ -56,15 +56,16 @@ export default function Kalender() {
 
   return (
     <Layout name="Kalender">
-      <h1 className="text-3xl font-bold text-main-500 mb-3">Kalender</h1>
+      <h1 className="text-3xl px-[7%] py-10 font-bold text-main-500 mb-3">
+        Kalender
+      </h1>
 
       <div className="text-center mb-3">
-        <p>
-          Sekarang tanggal <strong>{indonesianDate()}</strong>
+        <p className="text-2xl font-semibold">
+          Hari ini <strong>{indonesianDate()}</strong>
         </p>
-        <p>
-          Berikut ini kalender sholat khusus bulan{' '}
-          <strong>{d.getMonth() + 1}</strong> tahun{' '}
+        <p className="font-medium">
+          Berikut ini kalender sholat khusus bulan <strong>ini</strong> tahun{' '}
           <strong>{d.getFullYear()}</strong>
         </p>
       </div>

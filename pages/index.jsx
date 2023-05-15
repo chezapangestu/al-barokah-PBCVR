@@ -168,7 +168,7 @@ export default function JadwalSolatHariIni() {
           displayMap ? 'visible' : 'invisible'
         }`}
       >
-        <h2 className="text-lg font-bold text-sky-500">Atur Lokasi</h2>
+        <h2 className="text-lg font-bold text-main-500">Atur Lokasi</h2>
         <p>Silakan klik lokasi pada map untuk mengganti lokasi.</p>
 
         <Tracker callback={(coords) => setCoordinates(coords)} />
@@ -176,13 +176,13 @@ export default function JadwalSolatHariIni() {
         <div className="space-x-3">
           <button
             onClick={() => setDisplayMap(!displayMap)}
-            className="px-3 py-2 rounded-lg bg-sky-500 text-white"
+            className="px-3 py-2 rounded-lg bg-main-500 text-white"
           >
             Simpan
           </button>
           <button
             onClick={() => setDisplayMap(!displayMap)}
-            className="px-3 py-2 rounded-lg bg-zinc-500 text-white"
+            className="px-3 py-2 rounded-lg bg-zinc-400 text-white"
           >
             Kembali
           </button>
@@ -191,13 +191,13 @@ export default function JadwalSolatHariIni() {
       {/* End Of Display Map */}
 
       {/* Set Display Iqomah */}
-      <div
+      {/* <div
         className={`fixed inset-0 p-52 z-40 bg-red-500 opacity-10 duration-300 ${
           displayIqomah ? 'visible' : 'invisible'
         }`}
       >
         <h1>This is IQOMAH START NOW</h1>
-      </div>
+      </div> */}
       {/* End Of Display Iqomah */}
 
       {jadwalSholat && (
@@ -205,8 +205,8 @@ export default function JadwalSolatHariIni() {
           {jadwalSholat.date && (
             <>
               {/* MAIN JAM */}
-              <div className="bg-white dark:bg-black-900 fixed w-full top-0 left-0 border-b border-gray-200 dark:border-gray-600 backdrop-filter backdrop-blur-lg bg-opacity-50 transition duration-300 ease-in-out">
-                <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 grid-cols-3 gap-3 px-[7%] py-10">
+              <div className="bg-white dark:bg-black-900 fixed w-full top-0 left-0 z-10 border-b border-gray-200 dark:border-gray-600 backdrop-filter backdrop-blur-lg bg-opacity-50 transition duration-300 ease-in-out">
+                <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 grid-cols-1 gap-3 px-[7%] py-10">
                   <div>
                     <p className="flex items-center font-semibold text-3xl ">
                       {tanggal}
@@ -227,7 +227,7 @@ export default function JadwalSolatHariIni() {
                     </div>
                   </div>
                   <div className="flex">
-                    <div className="max-w-[70px]">
+                    <div className="max-w-[70px] lg:visible md:visible sm:hidden hidden">
                       <Image
                         src={logoAlBarokah}
                         height={5}
@@ -242,7 +242,7 @@ export default function JadwalSolatHariIni() {
                       </p>
                     </div>
                   </div>
-                  <div className="text-right">
+                  <div className="lg:text-right md:text-right sm:text-left text-left">
                     <p className="font-black text-7xl">{jam}</p>
                   </div>
                   {/* -------------------------++++ */}
@@ -281,13 +281,13 @@ export default function JadwalSolatHariIni() {
 
           {/* Looping jadwal sholat */}
           {jadwalSholat.timings && (
-            <div className="fixed bottom-0 pb-20 px-[7%] py-10 flex flex-col space-y-5">
-              <div className="flex space-x-2 items-center p-10 bg-gray-400 max-w-sm rounded-lg">
+            <div className="pb-20 px-[7%] lg:pt-[10%] md:pt-[10%] sm:pt-44 pt-44 flex flex-col space-y-5">
+              <div className="flex space-x-2 items-center p-10 bg-gray-400 max-w-sm rounded-lg mt-64">
                 {/* <button onClick={play}>Boop!</button> */}
                 <p className="text-3xl font-bold">
                   {indonesianName(next.name)}
                 </p>
-                <p className="text-3xl font-bold ">-{next.countDown}</p>
+                <p className="text-3xl font-bold">-{next.countDown}</p>
               </div>
 
               <div className="grid lg:grid-cols-7 md:grid-cols-7 sm:grid-cols-1 grid-cols-1 gap-3">
