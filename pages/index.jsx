@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import ErrorCard from '../components/ErrorCards'
 import JadwalSholatCard from '../components/JadwalSholatCard'
 import Layout from '../components/Layouts'
@@ -36,6 +37,8 @@ export default function JadwalSolatHariIni() {
   const [tanggal, setTanggal] = useState(indonesianDate())
   const [jam, setJam] = useState(indonesianDate(true))
   const [next, setNext] = useState({ name: '-', countDown: 0 })
+
+  const router = useRouter()
 
   // Fetch jadwal sholat
   useEffect(() => {
@@ -113,7 +116,7 @@ export default function JadwalSolatHariIni() {
 
   // Memutar audio adzan
   useEffect(() => {
-    const adzan = document.getElementById('short')
+    const adzan = document.getElementById('adzan')
     document.body.onclick = () => {
       adzan.play()
       adzan.pause()
@@ -122,19 +125,24 @@ export default function JadwalSolatHariIni() {
     const { name, countDown } = next
     switch (name) {
       case 'Fajr':
+        if (countDown === '00:00:00') {
+          router.push('waktuadzanSubuh')
+        }
       case 'Dhuhr':
         if (countDown === '00:00:00') {
-          adzan.play()
+          router.push('waktuadzanDzuhur')
         }
       case 'Asr':
-        if (countDown === '01:38:50') {
-          adzan.play()
+        if (countDown === '00:00:00') {
+          router.push('waktuadzanAshar')
         }
       case 'Maghrib':
+        if (countDown === '00:00:00') {
+          router.push('waktuadzanMaghrib')
+        }
       case 'Isha':
         if (countDown === '00:00:00') {
-          setDisplayIqomah(!displayIqomah)
-          adzan.play()
+          router.push('waktuadzanIsya')
         }
 
         break
@@ -237,6 +245,7 @@ export default function JadwalSolatHariIni() {
                   <div className="text-right">
                     <p className="font-black text-7xl">{jam}</p>
                   </div>
+                  {/* -------------------------++++ */}
 
                   {/* <p className="flex items-center font-medium text-2xl">
                   {jadwalSholat.date.hijri.day}{' '}
