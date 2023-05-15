@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import { FullScreen, useFullScreenHandle } from 'react-full-screen'
 import ErrorCard from '../components/ErrorCards'
 import JadwalSholatCard from '../components/JadwalSholatCard'
 import Layout from '../components/Layouts'
@@ -10,6 +11,7 @@ import { coords } from '../constants/location'
 import { indonesianDate, indonesianName } from '../utils/jadwal-sholat'
 import LimaWaktuShalat from '../components/LimaWaktuShalat'
 import logoAlBarokah from '../public/pict/logo-al-barokah-192x192.png'
+import BottomNavigation from '../components/BottomNavigation'
 
 // import useSound from 'use-sound'
 // import beepSfx from '../public/alarm.mp3'
@@ -31,7 +33,7 @@ export default function JadwalSolatHariIni() {
   })
 
   const [displayMap, setDisplayMap] = useState(false)
-  const [displayIqomah, setDisplayIqomah] = useState(false)
+  // const [displayIqomah, setDisplayIqomah] = useState(false)
 
   const [today, setToday] = useState(Number(dd))
   const [tanggal, setTanggal] = useState(indonesianDate())
@@ -39,6 +41,8 @@ export default function JadwalSolatHariIni() {
   const [next, setNext] = useState({ name: '-', countDown: 0 })
 
   const router = useRouter()
+
+  const handle = useFullScreenHandle()
 
   // Fetch jadwal sholat
   useEffect(() => {
@@ -157,141 +161,157 @@ export default function JadwalSolatHariIni() {
 
   return (
     <Layout name="Jadwal Sholat">
-      {loading && <Loading message="Memuat jadwal sholat..." />}
-      {error && (
-        <ErrorCard message="Gagal memuat data, silakan periksa koneksi internet Anda lalu refresh halaman ini." />
-      )}
+      <FullScreen handle={handle}>
+        {loading && <Loading message="Memuat jadwal sholat..." />}
+        {error && (
+          <ErrorCard message="Gagal memuat data, silakan periksa koneksi internet Anda lalu refresh halaman ini." />
+        )}
 
-      {/* Set Display Map */}
-      <div
-        className={`fixed inset-0 p-3 z-20 bg-white duration-300 ${
-          displayMap ? 'visible' : 'invisible'
-        }`}
-      >
-        <h2 className="text-lg font-bold text-main-500">Atur Lokasi</h2>
-        <p>Silakan klik lokasi pada map untuk mengganti lokasi.</p>
+        {/* Set Display Map */}
+        <div
+          className={`fixed inset-0 p-3 z-20 bg-white duration-300 ${
+            displayMap ? 'visible' : 'invisible'
+          }`}
+        >
+          <h2 className="text-lg font-bold text-main-500">Atur Lokasi</h2>
+          <p>Silakan klik lokasi pada map untuk mengganti lokasi.</p>
 
-        <Tracker callback={(coords) => setCoordinates(coords)} />
+          <Tracker callback={(coords) => setCoordinates(coords)} />
 
-        <div className="space-x-3">
-          <button
-            onClick={() => setDisplayMap(!displayMap)}
-            className="px-3 py-2 rounded-lg bg-main-500 text-white"
-          >
-            Simpan
-          </button>
-          <button
-            onClick={() => setDisplayMap(!displayMap)}
-            className="px-3 py-2 rounded-lg bg-zinc-400 text-white"
-          >
-            Kembali
-          </button>
+          <div className="space-x-3">
+            <button
+              onClick={() => setDisplayMap(!displayMap)}
+              className="px-3 py-2 rounded-lg bg-main-500 text-white"
+            >
+              Simpan
+            </button>
+            <button
+              onClick={() => setDisplayMap(!displayMap)}
+              className="px-3 py-2 rounded-lg bg-zinc-400 text-white"
+            >
+              Kembali
+            </button>
+          </div>
         </div>
-      </div>
-      {/* End Of Display Map */}
+        {/* End Of Display Map */}
 
-      {/* Set Display Iqomah */}
-      {/* <div
+        {/* Set Display Iqomah */}
+        {/* <div
         className={`fixed inset-0 p-52 z-40 bg-red-500 opacity-10 duration-300 ${
           displayIqomah ? 'visible' : 'invisible'
         }`}
       >
         <h1>This is IQOMAH START NOW</h1>
       </div> */}
-      {/* End Of Display Iqomah */}
+        {/* End Of Display Iqomah */}
 
-      {jadwalSholat && (
-        <>
-          {jadwalSholat.date && (
-            <>
-              {/* MAIN JAM */}
-              <div className="bg-white dark:bg-black-900 fixed w-full top-0 left-0 z-10 border-b border-gray-200 dark:border-gray-600 backdrop-filter backdrop-blur-lg bg-opacity-50 transition duration-300 ease-in-out">
-                <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 grid-cols-1 gap-3 px-[7%] py-10">
-                  <div>
-                    <p className="flex items-center font-semibold text-3xl ">
-                      {tanggal}
-                    </p>
-                    <p className="flex items-center font-medium text-2xl">
-                      {jadwalSholat.date.hijri.day}{' '}
-                      {jadwalSholat.date.hijri.month.en}{' '}
-                      {jadwalSholat.date.hijri.year}
-                    </p>
-                    <div className="flex items-center mt-5">
-                      <button
-                        onClick={() => setDisplayMap(!displayMap)}
-                        className=" h-6 w-auto px-2 rounded-lg bg-main-500 text-white text-xs"
-                        title="Klik untuk mengatur lokasi sesuai keinginan"
-                      >
-                        Update lokasi
-                      </button>
-                    </div>
-                  </div>
-                  <div className="flex">
-                    <div className="max-w-[70px] lg:visible md:visible sm:hidden hidden">
-                      <Image
-                        src={logoAlBarokah}
-                        height={5}
-                        width={150}
-                        alt="logo-al-barokah-pbcvr"
-                      />
-                    </div>
+        {jadwalSholat && (
+          <>
+            {jadwalSholat.date && (
+              <>
+                {/* MAIN JAM */}
+                <div className="bg-white dark:bg-black-900 fixed w-full top-0 left-0 z-10 border-b border-gray-200 dark:border-gray-600 backdrop-filter backdrop-blur-lg bg-opacity-50 transition duration-300 ease-in-out">
+                  <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 grid-cols-1 gap-3 px-[7%] py-10">
                     <div>
-                      <h1 className="text-4xl font-black">Masjid Al-Barokah</h1>
-                      <p className="font-medium text-xl">
-                        Pesona Bali City View Residence
+                      <p className="flex items-center font-semibold text-3xl ">
+                        {tanggal}
                       </p>
-                    </div>
-                  </div>
-                  <div className="lg:text-right md:text-right sm:text-left text-left">
-                    <p className="font-black text-7xl">{jam}</p>
-                  </div>
-                  {/* -------------------------++++ */}
 
-                  {/* <p className="flex items-center font-medium text-2xl">
+                      <p className="flex items-center font-medium text-2xl">
+                        {jadwalSholat.date.hijri.day}{' '}
+                        {jadwalSholat.date.hijri.month.en}{' '}
+                        {jadwalSholat.date.hijri.year}
+                      </p>
+                      <div className="flex items-center space-x-3 mt-5">
+                        <button
+                          onClick={() => setDisplayMap(!displayMap)}
+                          className=" h-6 w-auto px-2 rounded-lg bg-main-500 opacity-30 text-white text-xs"
+                          title="Klik untuk mengatur lokasi sesuai keinginan"
+                        >
+                          Update lokasi
+                        </button>
+                        <button
+                          className="h-6 w-auto px-2 rounded-lg bg-main-500 opacity-30 text-white text-xs"
+                          onClick={handle.enter}
+                        >
+                          Enter fullscreen
+                        </button>
+                        <button
+                          className="h-6 w-auto px-2 rounded-lg bg-main-500 opacity-30 text-white text-xs"
+                          onClick={handle.exit}
+                        >
+                          Exit
+                        </button>
+                      </div>
+                    </div>
+                    <div className="flex">
+                      <div className="max-w-[70px]">
+                        <Image
+                          src={logoAlBarokah}
+                          height={5}
+                          width={150}
+                          alt="logo-al-barokah-pbcvr"
+                        />
+                      </div>
+                      <div>
+                        <h1 className="text-4xl font-black">
+                          Masjid Al-Barokah
+                        </h1>
+                        <p className="font-medium text-xl">
+                          Pesona Bali City View Residence
+                        </p>
+                      </div>
+                    </div>
+                    <div className="lg:text-right md:text-right sm:text-left text-left">
+                      <p className="font-black text-7xl">{jam}</p>
+                    </div>
+                    {/* -------------------------++++ */}
+
+                    {/* <p className="flex items-center font-medium text-2xl">
                   {jadwalSholat.date.hijri.day}{' '}
                   {jadwalSholat.date.hijri.month.en}{' '}
                   {jadwalSholat.date.hijri.year}
                 </p> */}
-                </div>
+                  </div>
 
-                {/* AKHIR MAIN JAM */}
+                  {/* AKHIR MAIN JAM */}
 
-                {/* <p>Berikut jadwal sholat hari ini.</p> */}
+                  {/* <p>Berikut jadwal sholat hari ini.</p> */}
 
-                {/* TIMEZONE */}
-                {/* <p className="flex items-center mt-3">
+                  {/* TIMEZONE */}
+                  {/* <p className="flex items-center mt-3">
                   {jadwalSholat.meta.timezone}
                 </p> */}
-                {/* AKHIR TIMEZONE */}
+                  {/* AKHIR TIMEZONE */}
 
-                {/* <div>
+                  {/* <div>
                   <p className="text-2xl">menuju</p>
                   <p className="text-2xl font-bold">
                     {indonesianName(next.name)}
                   </p>
                 </div> */}
 
-                {/* <p className="py-10 font-bold text-2xl">
+                  {/* <p className="py-10 font-bold text-2xl">
                   Berikutnya <p></p> lagi menuju{' '}
                   <strong>{indonesianName(next.name)}</strong>
                 </p> */}
-              </div>
-            </>
-          )}
+                </div>
+              </>
+            )}
 
-          {/* Looping jadwal sholat */}
-          {jadwalSholat.timings && (
-            <div className="pb-20 px-[7%] lg:pt-[10%] md:pt-[10%] sm:pt-44 pt-44 flex flex-col space-y-5">
-              <div className="flex space-x-2 items-center p-10 bg-gray-400 max-w-sm rounded-lg mt-64">
-                {/* <button onClick={play}>Boop!</button> */}
-                <p className="text-3xl font-bold">
-                  {indonesianName(next.name)}
-                </p>
-                <p className="text-3xl font-bold">-{next.countDown}</p>
-              </div>
+            {/* Looping jadwal sholat */}
+            {jadwalSholat.timings && (
+              <div className="pb-20 px-[7%] lg:pt-[10%] md:pt-[10%] sm:pt-44 pt-44 flex flex-col space-y-5">
+                <div className="flex space-x-2 items-center p-10 bg-gray-400 max-w-sm rounded-lg mt-64">
+                  {/* <button onClick={play}>Boop!</button> */}
+                  <p className="text-3xl font-bold">
+                    {indonesianName(next.name)}
+                  </p>
+                  <p className="text-3xl font-bold">-{next.countDown}</p>
+                </div>
 
-              <div className="grid lg:grid-cols-7 md:grid-cols-7 sm:grid-cols-1 grid-cols-1 gap-3">
-                {/* {Object.keys(jadwalSholat.timings).map((key, index) => (
+                <div className="grid lg:grid-cols-7 md:grid-cols-7 sm:grid-cols-1 grid-cols-1 gap-3">
+                  {/* {Object.keys(jadwalSholat.timings).map((key, index) => (
                 <JadwalSholatCard
                   key={index}
                   sholat={{
@@ -301,7 +321,7 @@ export default function JadwalSolatHariIni() {
                   }}
                 />
               ))} */}
-                {/* <div className="flex">
+                  {/* <div className="flex">
                 <div className="p-10">
                   <p>Imsak</p>
                   {jadwalSholat.timings.Imsak}
@@ -330,64 +350,66 @@ export default function JadwalSolatHariIni() {
                   <p>Isha</p>
                   {jadwalSholat.timings.Isha}
                 </div> */}
-                <LimaWaktuShalat
-                  title={'Imsak'}
-                  value={jadwalSholat.timings.Imsak}
-                  variant={'bg-imsak'}
-                />
-                <LimaWaktuShalat
-                  title={'Subuh'}
-                  value={jadwalSholat.timings.Fajr}
-                  variant={'bg-subuh'}
-                />
-                <LimaWaktuShalat
-                  title={'Isyraq'}
-                  value={jadwalSholat.timings.Sunrise}
-                  variant={'bg-isyraq'}
-                />
-                <LimaWaktuShalat
-                  title={'Dzuhur'}
-                  value={jadwalSholat.timings.Dhuhr}
-                  variant={'bg-dzuhur'}
-                />
-                <LimaWaktuShalat
-                  title={'Ashar'}
-                  value={jadwalSholat.timings.Asr}
-                  variant={'bg-ashar'}
-                />
-                <LimaWaktuShalat
-                  title={'Maghrib'}
-                  value={jadwalSholat.timings.Maghrib}
-                  variant={'bg-maghrib'}
-                />
-                <LimaWaktuShalat
-                  title={"Isya'"}
-                  value={jadwalSholat.timings.Isha}
-                  variant={'bg-isya'}
-                />
-                {/* </div> */}
+                  <LimaWaktuShalat
+                    title={'Imsak'}
+                    value={jadwalSholat.timings.Imsak}
+                    variant={'bg-imsak'}
+                  />
+                  <LimaWaktuShalat
+                    title={'Subuh'}
+                    value={jadwalSholat.timings.Fajr}
+                    variant={'bg-subuh'}
+                  />
+                  <LimaWaktuShalat
+                    title={'Isyraq'}
+                    value={jadwalSholat.timings.Sunrise}
+                    variant={'bg-isyraq'}
+                  />
+                  <LimaWaktuShalat
+                    title={'Dzuhur'}
+                    value={jadwalSholat.timings.Dhuhr}
+                    variant={'bg-dzuhur'}
+                  />
+                  <LimaWaktuShalat
+                    title={'Ashar'}
+                    value={jadwalSholat.timings.Asr}
+                    variant={'bg-ashar'}
+                  />
+                  <LimaWaktuShalat
+                    title={'Maghrib'}
+                    value={jadwalSholat.timings.Maghrib}
+                    variant={'bg-maghrib'}
+                  />
+                  <LimaWaktuShalat
+                    title={"Isya'"}
+                    value={jadwalSholat.timings.Isha}
+                    variant={'bg-isya'}
+                  />
+                  {/* </div> */}
+                </div>
               </div>
-            </div>
-          )}
-        </>
-      )}
+            )}
+          </>
+        )}
 
-      <audio
-        id="adzan"
-        controls
-        src="/adzan.mp3"
-        className="hidden"
-        // loading="lazy"
-        preload="none"
-      />
-      <audio
-        id="short"
-        controls
-        src="/short.mp3"
-        className="hidden"
-        // loading="lazy"
-        preload="none"
-      />
+        <audio
+          id="adzan"
+          controls
+          src="/adzan.mp3"
+          className="hidden"
+          // loading="lazy"
+          preload="none"
+        />
+        <audio
+          id="short"
+          controls
+          src="/short.mp3"
+          className="hidden"
+          // loading="lazy"
+          preload="none"
+        />
+        <BottomNavigation />
+      </FullScreen>
     </Layout>
   )
 }

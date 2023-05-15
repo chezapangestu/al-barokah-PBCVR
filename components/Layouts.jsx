@@ -27,7 +27,7 @@ export default function Layout({ children, name }) {
         {/* <Header /> */}
         <Content className="w-full">{children}</Content>
         {/* <Footer /> */}
-        <BottomNavigation />
+        {/* <BottomNavigation /> */}
       </main>
     </div>
   )

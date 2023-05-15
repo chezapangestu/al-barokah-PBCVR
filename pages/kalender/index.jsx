@@ -4,6 +4,7 @@ import Layout from '../../components/Layouts'
 import Loading from '../../components/Loading'
 import { coords } from '../../constants/location'
 import { indonesianDate } from '../../utils/jadwal-sholat'
+import BottomNavigation from '../../components/BottomNavigation'
 
 export default function Kalender() {
   const [coordinates, setCoordinates] = useState({
@@ -111,6 +112,7 @@ export default function Kalender() {
           </table>
         </div>
       )}
+      <BottomNavigation />
     </Layout>
   )
 }
