@@ -165,7 +165,7 @@ export default function JadwalSolatHariIni() {
 
   return (
     <Layout name="Jadwal Sholat">
-      <div>
+      <div className="hero-main">
         <FullScreen handle={handle}>
           {loading && <Loading message="Memuat jadwal sholat..." />}
           {error && (
@@ -228,7 +228,7 @@ export default function JadwalSolatHariIni() {
                           {jadwalSholat.date.hijri.year}
                         </p>
                         <div className="flex items-center space-x-3 mt-5">
-                          <button
+                          {/* <button
                             onClick={() => setDisplayMap(!displayMap)}
                             className=" h-6 w-auto px-2 rounded-lg bg-main-500 opacity-30 text-white text-xs"
                             title="Klik untuk mengatur lokasi sesuai keinginan"
@@ -246,7 +246,7 @@ export default function JadwalSolatHariIni() {
                             onClick={handle.exit}
                           >
                             Exit
-                          </button>
+                          </button> */}
                         </div>
                       </div>
                       <div className="flex">
@@ -306,14 +306,14 @@ export default function JadwalSolatHariIni() {
 
               {/* Looping jadwal sholat */}
               {jadwalSholat.timings && (
-                <div className="pb-20 px-[7%] lg:pt-[13%] md:pt-[13%] sm:pt-44 pt-44 flex flex-col space-y-5">
-                  <div className="flex space-x-2 items-center p-10 bg-gray-300 max-w-xl rounded-lg mt-64">
+                <div className="pb-20 px-[7%] lg:pt-[15%] md:pt-[15%] sm:pt-44 pt-44 flex flex-col space-y-5">
+                  <div className="flex space-x-2 items-center p-5 bg-gray-300 opacity-80 max-w-xl rounded-xl mt-64">
                     {/* <button onClick={play}>Boop!</button> */}
                     <p className="text-2xl font-medium">Menuju</p>
                     <p className="text-5xl font-bold">
                       {indonesianName(next.name)}
                     </p>
-                    <p className="text-3xl font-bold">- {next.countDown}</p>
+                    <p className="text-5xl font-bold"> -{next.countDown}</p>
                   </div>
 
                   <div className="grid lg:grid-cols-7 md:grid-cols-7 sm:grid-cols-1 grid-cols-1 gap-3">
