@@ -12,7 +12,7 @@ export default function LimaWaktuShalat({ title, value, className, variant }) {
   const pickedVariant = variants[variant]
   return (
     <div
-      className={`grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-2 grid-cols-2 p-10 border text-center ${pickedVariant} ${addClassName}`}
+      className={`grid lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-2 grid-cols-2 p-10 text-center ${pickedVariant} ${addClassName}`}
     >
       <p className="font-black text-2xl text-white drop-shadow-md">{title}</p>
       <p className="font-bold text-3xl text-white drop-shadow-2xl">{value}</p>
