@@ -131,25 +131,26 @@ export default function JadwalSolatHariIni() {
     }
 
     const { name, countDown } = next
+    console.log(next)
     switch (name) {
       case 'Fajr':
-        if (countDown === '00:00:00') {
+        if (countDown === '00:00:00' && name === 'Fajr') {
           router.push('waktuadzanSubuh')
         }
       case 'Dhuhr':
-        if (countDown === '00:00:00') {
+        if (countDown === '00:00:00' && name === 'Dhuhr') {
           router.push('waktuadzanDzuhur')
         }
       case 'Asr':
-        if (countDown === '00:00:00') {
+        if (countDown === '00:00:00' && name === 'Asr') {
           router.push('waktuadzanAshar')
         }
       case 'Maghrib':
-        if (countDown === '00:00:00') {
+        if (countDown === '00:00:00' && name === 'Maghrib') {
           router.push('waktuadzanMaghrib')
         }
       case 'Isha':
-        if (countDown === '00:00:00') {
+        if (countDown === '00:00:00' && name === 'Isha') {
           router.push('waktuadzanIsya')
         }
 

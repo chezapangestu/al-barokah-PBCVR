@@ -15,8 +15,8 @@ export default function WaktuadzanDzuhur() {
   useEffect(() => {
     alarmRef.current.play()
     setTimeout(() => {
-      router.push('/iqomahDzuhur')
-    }, 50000)
+      router.push('iqomahDzuhur')
+    }, 300000)
   }, [])
 
   return (
