@@ -37,7 +37,7 @@ export default function Kalender() {
     const query = new URLSearchParams({
       ...coordinates,
       method: 15,
-      tune: '0,0,0,2,2,6,0,-3,-3',
+      tune: '-1,-1,0,2,2,6,0,-2,-3',
     })
 
     console.log(`${query}`)

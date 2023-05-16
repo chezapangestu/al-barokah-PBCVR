@@ -217,19 +217,17 @@ export default function JadwalSolatHariIni() {
                 <>
                   {/* MAIN JAM */}
                   <div className="bg-white dark:bg-black-900 fixed w-full top-0 left-0 z-10 border-b border-gray-200 dark:border-gray-600 backdrop-filter backdrop-blur-lg bg-opacity-50 transition duration-300 ease-in-out">
-                    <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 grid-cols-1 gap-3 px-[7%] py-10">
-                      <div>
-                        <p className="flex items-center font-semibold text-3xl ">
-                          {tanggal}
-                        </p>
+                    <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 grid-cols-1 gap-3 px-[7%] py-10 items-center">
+                      <div className="flex flex-col">
+                        <p className="font-bold text-3xl ">{tanggal}</p>
 
-                        <p className="flex items-center font-medium text-2xl">
+                        <p className="flex font-medium text-2xl">
                           {jadwalSholat.date.hijri.day}{' '}
                           {jadwalSholat.date.hijri.month.en}{' '}
                           {jadwalSholat.date.hijri.year}
                         </p>
-                        <div className="flex items-center space-x-3 mt-5">
-                          {/* <button
+                        {/* <div className="flex space-x-3 mt-5">
+                          <button
                             onClick={() => setDisplayMap(!displayMap)}
                             className=" h-6 w-auto px-2 rounded-lg bg-main-500 opacity-30 text-white text-xs"
                             title="Klik untuk mengatur lokasi sesuai keinginan"
@@ -247,8 +245,8 @@ export default function JadwalSolatHariIni() {
                             onClick={handle.exit}
                           >
                             Exit
-                          </button> */}
-                        </div>
+                          </button>
+                        </div> */}
                       </div>
                       <div className="flex">
                         <div className="max-w-[70px]">
@@ -311,7 +309,7 @@ export default function JadwalSolatHariIni() {
                   <div className="flex space-x-2 items-center p-5 bg-gray-300 opacity-80 max-w-xl rounded-xl mt-64">
                     {/* <button onClick={play}>Boop!</button> */}
                     <p className="text-2xl font-medium">Menuju</p>
-                    <p className="text-5xl font-bold">
+                    <p className="text-5xl font-black text-black">
                       {indonesianName(next.name)}
                     </p>
                     <p className="text-5xl font-bold"> -{next.countDown}</p>

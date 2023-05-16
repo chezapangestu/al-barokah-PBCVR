@@ -28,7 +28,7 @@ const indonesianName = (name) => {
         break
 
       case 'Midnight':
-        return 'Tengah malam (Tahajud)'
+        return 'Tahajud'
         break
 
       default:

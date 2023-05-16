@@ -6,7 +6,7 @@ import ModalSetting from '../../components/ModalSetting'
 import Navigation from '../../components/Navigation'
 
 export default function IqomahSubuh() {
-  const [pomodoro, setPomodoro] = useState(10)
+  const [pomodoro, setPomodoro] = useState(12)
   const [shortBreak, setShortBreak] = useState(5)
   const [longBreak, setLongBreak] = useState(7)
   const [seconds, setSecond] = useState(0)
@@ -123,6 +123,9 @@ export default function IqomahSubuh() {
     <div className="bg-gray-900 min-h-screen font-inter">
       <div className="max-w-2xl min-h-screen mx-auto">
         <Navigation setOpenSetting={setOpenSetting} />
+        <h1 className="text-center font-bold text-white text-5xl pt-10">
+          Waktu Iqomah Subuh
+        </h1>
         <Timer
           stage={stage}
           switchStage={switchStage}

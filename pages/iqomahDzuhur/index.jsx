@@ -123,6 +123,9 @@ export default function Countdown() {
     <div className="bg-gray-900 min-h-screen font-inter">
       <div className="max-w-2xl min-h-screen mx-auto">
         <Navigation setOpenSetting={setOpenSetting} />
+        <h1 className="text-center font-bold text-white text-5xl pt-10">
+          Waktu Iqomah Dzuhur
+        </h1>
         <Timer
           stage={stage}
           switchStage={switchStage}
