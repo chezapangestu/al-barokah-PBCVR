@@ -8,7 +8,7 @@ const indonesianName = (name) => {
         break
 
       case 'Sunrise':
-        return 'Terbit'
+        return 'Syuruq'
         break
 
       case 'Dhuhr':
