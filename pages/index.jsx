@@ -305,7 +305,7 @@ export default function JadwalSolatHariIni() {
 
               {/* Looping jadwal sholat */}
               {jadwalSholat.timings && (
-                <div className="pb-20 px-[7%] lg:pt-[15%] md:pt-[15%] sm:pt-44 pt-44 flex flex-col space-y-5">
+                <div className="pb-20 px-[7%] lg:pt-[16%] md:pt-[16%] sm:pt-44 pt-44 flex flex-col space-y-5">
                   <div className="flex space-x-2 items-center p-5 bg-gray-300 opacity-80 max-w-xl rounded-xl mt-64">
                     {/* <button onClick={play}>Boop!</button> */}
                     <p className="text-2xl font-medium">Menuju</p>
