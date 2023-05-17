@@ -1,7 +1,7 @@
 export default function RunningText() {
   return (
-    <div className="w-full bg-main-400 text-black fixed bottom-0 p-4 flex items-center space-x-5">
-      <marquee className="text-lg font-medium">
+    <div className="w-full bg-main-400 text-black fixed bottom-0 p-6 flex items-center space-x-5">
+      <marquee className="text-3xl font-medium">
         <b>PROGRAM MASJID:</b> Mengaji Iqra (Anak), Setiap Senin, Selasa, Rabu.
         Pukul 16.00 s/d Selesai | Mengaji Al-Quran (Anak), Setiap Senin, Selasa,
         Rabu. Pukul 18.00 s/d Selesai | Tadabur & Tahsin Quran, Setiap Jumat.
@@ -25,7 +25,7 @@ export default function RunningText() {
         Masjid Al-Barokah PBCVR
       </marquee>
       <p>|</p>
-      <marquee className="text-lg font-medium italic">
+      <marquee className="text-3xl font-medium italic">
         “Sebaik-baik kalian adalah orang yang mempelajari Alquran dan
         mengajarkannya,” (HR. Bukhari no. 5027).
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
