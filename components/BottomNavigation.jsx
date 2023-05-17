@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 const navs = [
   {
-    name: 'Sholat',
+    name: 'Shalat',
     url: '/',
     icon: (
       <svg
