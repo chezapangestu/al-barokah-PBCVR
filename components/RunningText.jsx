@@ -1,6 +1,6 @@
 export default function RunningText() {
   return (
-    <div className="w-full bg-main-400 text-black fixed bottom-0 p-6 flex items-center space-x-5">
+    <div className="w-full bg-main-400 text-black fixed bottom-0 p-4 flex items-center space-x-5">
       <marquee className="text-3xl font-medium">
         <b>PROGRAM MASJID:</b> Mengaji Iqra (Anak), Setiap Senin, Selasa, Rabu.
         Pukul 16.00 s/d Selesai | Mengaji Al-Quran (Anak), Setiap Senin, Selasa,
