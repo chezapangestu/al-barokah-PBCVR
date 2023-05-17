@@ -61,12 +61,12 @@ export default function Kalender() {
         Kalender
       </h1>
 
-      <div className="text-center mb-3">
+      <div className="text-center mb-3 px-[7%] py-10">
         <p className="text-2xl font-semibold">
           Hari ini <strong>{indonesianDate()}</strong>
         </p>
         <p className="font-medium">
-          Berikut ini kalender sholat khusus bulan <strong>ini</strong> tahun{' '}
+          Berikut ini kalender sholat khusus bulan ini tahun{' '}
           <strong>{d.getFullYear()}</strong>
         </p>
       </div>

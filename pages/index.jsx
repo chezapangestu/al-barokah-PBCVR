@@ -308,11 +308,16 @@ export default function JadwalSolatHariIni() {
                 <div className="pb-20 px-[7%] lg:pt-[16%] md:pt-[16%] sm:pt-44 pt-44 flex flex-col space-y-5">
                   <div className="flex space-x-2 items-center p-5 bg-gray-300 opacity-80 max-w-xl rounded-xl mt-64">
                     {/* <button onClick={play}>Boop!</button> */}
-                    <p className="text-2xl font-medium">Menuju</p>
-                    <p className="text-5xl font-black text-black">
+                    <p className="lg:text-2xl md:text-2xl sm:text-lg text-lg font-medium">
+                      Menuju
+                    </p>
+                    <p className="lg:text-5xl md:text-5xl sm:text-lg text-lg font-black text-black">
                       {indonesianName(next.name)}
                     </p>
-                    <p className="text-5xl font-bold"> -{next.countDown}</p>
+                    <p className="lg:text-5xl md:text-5xl sm:text-lg text-lg font-bold">
+                      {' '}
+                      -{next.countDown}
+                    </p>
                   </div>
 
                   <div className="grid lg:grid-cols-7 md:grid-cols-7 sm:grid-cols-1 grid-cols-1 gap-3">
