@@ -12,6 +12,7 @@ import { indonesianDate, indonesianName } from '../utils/jadwal-sholat'
 import LimaWaktuShalat from '../components/LimaWaktuShalat'
 import logoAlBarokah from '../public/pict/logo-al-barokah-192x192.png'
 import BottomNavigation from '../components/BottomNavigation'
+import RunningText from '../components/RunningText'
 
 // import useSound from 'use-sound'
 // import beepSfx from '../public/alarm.mp3'
@@ -418,7 +419,8 @@ export default function JadwalSolatHariIni() {
             // loading="lazy"
             preload="none"
           />
-          <BottomNavigation />
+          {/* <BottomNavigation /> */}
+          <RunningText />
         </FullScreen>
       </div>
     </Layout>
