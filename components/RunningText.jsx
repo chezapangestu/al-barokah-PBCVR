@@ -25,22 +25,27 @@ export default function RunningText() {
         Masjid Al-Barokah PBCVR
       </marquee>
       <p>|</p>
-      <marquee className="text-3xl font-medium italic">
-        “Sebaik-baik kalian adalah orang yang mempelajari Alquran dan
-        mengajarkannya,” (HR. Bukhari no. 5027).
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        “Sesungguhnya amal itu tergantung niatnya,” (HR. Bukhari, no. 1 dan
-        Muslim, no. 1907).
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; “Tidak
-        sempurna iman seseorang, sehingga dia mencintai saudaranya seperti
-        mencintai dirinya sendiri,” (HR. Bukhari, no. 13 dan Muslim, no. 45).
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; “Muslim itu
-        saudara bagi muslim lainnya,” (Hadis Sahih Riwayat al-Bukhari: 2262).
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; “Orang yang
-        menunjukkan jalan kebaikan, mendapat pahala seperti yang melakukannya,”
-        (H.R. Muslim no. 1893).
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; “Orang yang
-        sempurna imannya adalah yang paling baik akhlaknya,” (HR. Muslim).
+      <marquee className="text-3xl font-medium">
+        "Seseorang yang berjalan ke masjid, maka tiap langkah kakinya akan
+        diberikan satu pahala, dihapuskan satu dosa, dan dinaikkan satu derajat
+        oleh Allah SWT." (HR. Ibnu Majah dan Muslim).
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; "Orang yang
+        menunggu sholat di masjid akan diberi pahala seperti sholat." (HR.
+        Bukhari). &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        "Ada tujuh golongan yang dinaungi kelak. Dan satunya adalah orang yang
+        hatinya terpaut dengan masjid. Seorang pemuda yang hatinya terikat
+        dengan masjid, orang-orang itulah yang akan mendapatkan perlindungan
+        dari Allah saat kiamat kelak." (HR. Bukhari).
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; "Seseorang
+        yang melaksanakan shoat Subuh berjamaah, maka orang itu akan mendapatkan
+        pahala 119 kali dibanding sholat sendiri." (HR. Muslim).
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; "Seseorang
+        yang melaksanakan sholat lsya berjamaah, maka dia akan mendapatkan
+        pahala 59 kali lipat." (HR. Muslim).
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; "Pahala
+        salat Dzuhur jamaah, Ashar jamaah, dan Maghrib jamaah masing-masing
+        dilipatgandakan 27 kali kalau kita laksanakan secara jamaah." (HR.
+        Muslim).
       </marquee>
     </div>
   )
