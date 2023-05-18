@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { FullScreen, useFullScreenHandle } from 'react-full-screen'
@@ -13,6 +13,7 @@ import LimaWaktuShalat from '../components/LimaWaktuShalat'
 import logoAlBarokah from '../public/pict/logo-al-barokah-192x192.png'
 import BottomNavigation from '../components/BottomNavigation'
 import RunningText from '../components/RunningText'
+import Alarm from '../components/Alarm'
 
 // import useSound from 'use-sound'
 // import beepSfx from '../public/alarm.mp3'
@@ -44,6 +45,8 @@ export default function JadwalSolatHariIni() {
   const router = useRouter()
 
   const handle = useFullScreenHandle()
+
+  const alarmRef = useRef()
 
   // Fetch jadwal sholat
   useEffect(() => {
@@ -151,12 +154,18 @@ export default function JadwalSolatHariIni() {
           router.push('waktuadzanAshar')
         }
       case 'Maghrib':
-        if (countDown === '00:00:00' && name === 'Maghrib') {
-          router.push('waktuadzanMaghrib')
+        if (countDown === '00:00:08' && name === 'Maghrib') {
+          alarmRef.current.play()
+          setTimeout(() => {
+            router.push('waktuadzanMaghrib')
+          }, 8000)
         }
       case 'Isha':
-        if (countDown === '00:00:00' && name === 'Isha') {
-          router.push('waktuadzanIsya')
+        if (countDown === '00:00:08' && name === 'Isha') {
+          alarmRef.current.play()
+          setTimeout(() => {
+            router.push('waktuadzanIsya')
+          }, 8000)
         }
 
         break
@@ -172,6 +181,7 @@ export default function JadwalSolatHariIni() {
   return (
     <Layout name="Jadwal Sholat">
       <div className="hero-main">
+        <Alarm ref={alarmRef} />
         <FullScreen handle={handle}>
           {loading && <Loading message="Memuat jadwal sholat..." />}
           {error && (

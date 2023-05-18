@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
-import Alarm from '../../components/Alarm'
+// import Alarm from '../../components/Alarm'
 
 export default function WaktuadzanMaghrib() {
   const router = useRouter()
-  const alarmRef = useRef()
+  // const alarmRef = useRef()
+
   // const [isTimeUp, setIsTimeUp] = useState(false)
 
   // const timeUp = () => {
@@ -13,7 +14,7 @@ export default function WaktuadzanMaghrib() {
   // }
 
   useEffect(() => {
-    alarmRef.current.play()
+    // alarmRef.current.play()
     setTimeout(() => {
       router.push('iqomahMaghrib')
     }, 300000)
@@ -21,7 +22,7 @@ export default function WaktuadzanMaghrib() {
 
   return (
     <div className="bg-white-900 font-inter p-[15%]">
-      <Alarm ref={alarmRef} />
+      {/* <Alarm ref={alarmRef} /> */}
       <div className="">
         <h1 className="text-[10rem] font-bold select-none text-center animate-pulse">
           Waktunya Adzan

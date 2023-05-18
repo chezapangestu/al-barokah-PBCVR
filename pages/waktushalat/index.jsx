@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
-import Alarm from '../../components/Alarm'
+import AlarmShalat from '../../components/AlarmShalat'
 
 export default function Waktushalat() {
   const router = useRouter()
-  const alarmRef = useRef()
+  const alarmRefShalat = useRef()
   // const [isTimeUp, setIsTimeUp] = useState(false)
 
   // const timeUp = () => {
@@ -13,7 +13,7 @@ export default function Waktushalat() {
   // }
 
   useEffect(() => {
-    alarmRef.current.play()
+    alarmRefShalat.current.play()
     setTimeout(() => {
       router.push('/')
     }, 30000)
@@ -21,7 +21,7 @@ export default function Waktushalat() {
 
   return (
     <div className="bg-white-900 font-inter p-[15%]">
-      <Alarm ref={alarmRef} />
+      <AlarmShalat ref={alarmRefShalat} />
       <div className="">
         <h1 className="text-[10rem] font-bold select-none text-center animate-pulse">
           Waktunya Shalat
