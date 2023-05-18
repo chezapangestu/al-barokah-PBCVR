@@ -13,12 +13,12 @@ export default function WaktuSyuruq() {
   //   // setIsTimeUp(true)
   // }
 
-  //   useEffect(() => {
-  //     alarmRef.current.play()
-  //     setTimeout(() => {
-  //       router.push('/')
-  //     }, 30000)
-  //   }, [])
+  useEffect(() => {
+    alarmRef.current.play()
+    setTimeout(() => {
+      router.push('/')
+    }, 600000)
+  }, [])
 
   return (
     <div className="syuruq-main px-72 py-60">

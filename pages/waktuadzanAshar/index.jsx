@@ -13,7 +13,7 @@ export default function WaktuadzanAshar() {
   // }
 
   useEffect(() => {
-    alarmRef.current.play()
+    // alarmRef.current.play()
     setTimeout(() => {
       router.push('iqomahAshar')
     }, 300000)
