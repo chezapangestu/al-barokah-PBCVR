@@ -19,6 +19,15 @@ strong {
 
 /* BG HERO MAIN PAGE */
 
+/* BG HERO MAIN PAGE */
+.syuruq-main {
+  background-image: url('../public/pict/sunrise-syuruq.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* BG HERO MAIN PAGE */
+
 /* BG - Color - 5 Times Prayer */
 .imsak-color {
   background-color: #1b3139;
