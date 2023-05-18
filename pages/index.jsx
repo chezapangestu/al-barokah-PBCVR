@@ -143,7 +143,7 @@ export default function JadwalSolatHariIni() {
           router.push('waktuadzanSubuh')
         }
       case 'Dhuhr':
-        if (countDown === '01:44:00' && name === 'Dhuhr') {
+        if (countDown === '00:00:00' && name === 'Dhuhr') {
           router.push('waktuadzanDzuhur')
         }
       case 'Asr':
