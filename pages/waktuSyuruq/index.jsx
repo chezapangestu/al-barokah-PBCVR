@@ -20,7 +20,7 @@ export default function WaktuSyuruq() {
   }, [])
 
   return (
-    <div className="syuruq-main py-28">
+    <div className="syuruq-main py-[115px]">
       <Alarm ref={alarmRef} />
       <div className="flex flex-col bg-black opacity-75 text-white p-20">
         <div className="px-10 space-y-28">
