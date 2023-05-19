@@ -17,7 +17,7 @@ export default function Waktushalat() {
     alarmRef.current.play()
     setTimeout(() => {
       router.push('/')
-    }, 30000)
+    }, 300000)
   }, [])
 
   return (

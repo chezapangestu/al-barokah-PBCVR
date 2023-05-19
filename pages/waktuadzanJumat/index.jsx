@@ -1,24 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
-// import Alarm from '../../components/Alarm'
 
-export default function WaktuadzanSubuh() {
+export default function WaktuadzanJumat() {
   const router = useRouter()
-  // const alarmRef = useRef()
-  // const [isTimeUp, setIsTimeUp] = useState(false)
-
-  // const timeUp = () => {
-  //   // reset()
-  //   // setIsTimeUp(true)
-  // }
-
   useEffect(() => {
     // alarmRef.current.play()
     setTimeout(() => {
-      router.push('iqomahSubuh')
+      router.push('/')
     }, 300000)
   }, [])
-
   return (
     <div className="bg-white-900 font-inter p-[15%]">
       {/* <Alarm ref={alarmRef} /> */}

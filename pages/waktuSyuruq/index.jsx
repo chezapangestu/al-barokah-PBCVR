@@ -14,30 +14,31 @@ export default function WaktuSyuruq() {
   // }
 
   useEffect(() => {
-    alarmRef.current.play()
     setTimeout(() => {
       router.push('/')
-    }, 600000)
+    }, 300000)
   }, [])
 
   return (
-    <div className="syuruq-main px-72 py-60">
+    <div className="syuruq-main py-28">
       <Alarm ref={alarmRef} />
-      <div className="flex flex-col space-y-10 bg-black opacity-75 text-white rounded-lg p-10">
-        <p className="font-medium text-2xl">
-          Dari Abu Umamah, Rasulullah shallallahu ‘alaihi wa sallam bersabda,
-        </p>
-        <h1 className="text-4xl font-bold select-none text-center">
-          مَنْ صَلَّى صَلاةَ الصُّبْحِ فِي مَسْجِدِ جَمَاعَةٍ يَثْبُتُ فِيهِ
-          حَتَّى يُصَلِّيَ سُبْحَةَ الضُّحَى، كَانَ كَأَجْرِ حَاجٍّ، أَوْ
-          مُعْتَمِرٍ تَامًّا حَجَّتُهُ وَعُمْرَتُهُ
-        </h1>
-        <p className="font-medium text-3xl text-justify">
-          “Barangsiapa yang mengerjakan shalat shubuh dengan berjama’ah di
-          masjid, lalu dia tetap berdiam di masjid sampai melaksanakan shalat
-          sunnah Dhuha, maka ia seperti mendapat pahala orang yang berhaji atau
-          berumroh secara sempurna.”
-        </p>
+      <div className="flex flex-col bg-black opacity-75 text-white p-20">
+        <div className="px-10 space-y-28">
+          <p className="font-medium text-4xl">
+            Dari Abu Umamah, Rasulullah shallallahu ‘alaihi wa sallam bersabda,
+          </p>
+          <h1 className="text-5xl font-base select-none text-center">
+            مَنْ صَلَّى صَلاةَ الصُّبْحِ فِي مَسْجِدِ جَمَاعَةٍ يَثْبُتُ فِيهِ
+            حَتَّى يُصَلِّيَ سُبْحَةَ الضُّحَى، كَانَ كَأَجْرِ حَاجٍّ، أَوْ
+            مُعْتَمِرٍ تَامًّا حَجَّتُهُ وَعُمْرَتُهُ
+          </h1>
+          <p className="font-base text-3xl text-justify">
+            “Barangsiapa yang mengerjakan shalat shubuh dengan berjama’ah di
+            masjid, lalu dia tetap berdiam di masjid sampai melaksanakan shalat
+            sunnah Dhuha, maka ia seperti mendapat pahala orang yang berhaji
+            atau berumroh secara sempurna.”
+          </p>
+        </div>
       </div>
     </div>
   )

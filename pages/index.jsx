@@ -48,6 +48,8 @@ export default function JadwalSolatHariIni() {
 
   const alarmRef = useRef()
 
+  const hariIni = d.getDay()
+
   // Fetch jadwal sholat
   useEffect(() => {
     // Query string
@@ -135,23 +137,45 @@ export default function JadwalSolatHariIni() {
     }
 
     const { name, countDown } = next
-    // console.log(next)
+    // console.log(hariIni)
     switch (name) {
       case 'Sunrise':
-        if (countDown === '00:00:00' && name === 'Sunrise') {
-          router.push('waktuSyuruq')
+        if (countDown === '00:00:08' && name === 'Sunrise') {
+          alarmRef.current.play()
+          setTimeout(() => {
+            router.push('waktushalatSyuruq')
+          }, 8000)
         }
       case 'Fajr':
-        if (countDown === '00:00:00' && name === 'Fajr') {
-          router.push('waktuadzanSubuh')
+        if (countDown === '00:00:08' && name === 'Fajr') {
+          alarmRef.current.play()
+          setTimeout(() => {
+            router.push('waktuadzanSubuh')
+          }, 8000)
         }
       case 'Dhuhr':
-        if (countDown === '00:00:00' && name === 'Dhuhr') {
-          router.push('waktuadzanDzuhur')
+        // UNTUK HARI JUMAT SHALAT JUMAT
+        if (countDown === '00:00:08' && name === 'Dhuhr' && hariIni === 5) {
+          alarmRef.current.play()
+          setTimeout(() => {
+            router.push('waktuadzanJumat')
+          }, 8000)
+        } else if (
+          countDown === '00:00:08' &&
+          name === 'Dhuhr' &&
+          hariIni !== 5
+        ) {
+          alarmRef.current.play()
+          setTimeout(() => {
+            router.push('waktuadzanDzuhur')
+          }, 8000)
         }
       case 'Asr':
-        if (countDown === '00:00:00' && name === 'Asr') {
-          router.push('waktuadzanAshar')
+        if (countDown === '00:00:08' && name === 'Asr') {
+          alarmRef.current.play()
+          setTimeout(() => {
+            router.push('waktuadzanAshar')
+          }, 8000)
         }
       case 'Maghrib':
         if (countDown === '00:00:08' && name === 'Maghrib') {
