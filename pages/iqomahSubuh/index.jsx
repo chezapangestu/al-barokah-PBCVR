@@ -80,7 +80,7 @@ export default function IqomahSubuh() {
     const setMinutes = updateMinute()
 
     if (minutes === 0 && seconds === 0) {
-      router.push('waktushalat')
+      router.push('waktushalatSubuh')
       // timeUp()
       // setTimeout(() => {
       //   router.push('waktushalat')

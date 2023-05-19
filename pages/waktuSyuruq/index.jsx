@@ -16,7 +16,7 @@ export default function WaktuSyuruq() {
   useEffect(() => {
     setTimeout(() => {
       router.push('/')
-    }, 300000)
+    }, 600000)
   }, [])
 
   return (
