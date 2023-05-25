@@ -441,7 +441,7 @@ export default function JadwalSolatHariIni() {
                   />
                   {/* </div> */}
                 </div>
-                <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 grid-cols-1 gap-10 justify-center">
+                <div className="flex space-x-10 opacity-100 justify-center">
                   <div className="p-5 flex flex-row justify-center bg-white rounded-lg space-x-3">
                     {/* <div className="flex items-start">
                       <Image
@@ -451,24 +451,24 @@ export default function JadwalSolatHariIni() {
                       />
                     </div> */}
                     <div>
-                      <h1 className="font-black text-2xl">INFAK</h1>
+                      {/* <h1 className="font-black text-2xl">INFAK</h1> */}
                       <div className="flex space-x-2">
                         <Image
                           src={logoBSI}
-                          height={62}
+                          height={90}
                           // width={80}
                           alt="logo-BSI"
                         />
                         <div>
                           <p className="font-black text-2xl">300-4000-888</p>
                           <p className="font-medium text-xl">
-                            Kode Bank BSI: <b>451</b>
+                            a.n Masjid Al-Barokah PBCVR <b>(infak)</b>
                           </p>
                         </div>
                       </div>
-                      <h1 className="text-xl font-medium">
+                      {/* <h1 className="text-xl font-medium">
                         a.n Masjid Al-Barokah PBCVR (infak)
-                      </h1>
+                      </h1> */}
                     </div>
                   </div>
                   <div className="p-5 flex flex-row justify-center bg-white rounded-lg space-x-3">
@@ -480,24 +480,24 @@ export default function JadwalSolatHariIni() {
                       />
                     </div> */}
                     <div>
-                      <h1 className="font-black text-2xl">WAKAF</h1>
+                      {/* <h1 className="font-black text-2xl">WAKAF</h1> */}
                       <div className="flex space-x-2">
                         <Image
                           src={logoBSI}
-                          height={62}
+                          height={90}
                           // width={80}
                           alt="logo-BSI"
                         />
                         <div>
                           <p className="font-black text-2xl">300-4000-567</p>
                           <p className="font-medium text-xl">
-                            Kode Bank BSI: <b>451</b>
+                            a.n Masjid Al-Barokah PBCVR <b>(wakaf)</b>
                           </p>
                         </div>
                       </div>
-                      <h1 className="text-xl font-medium">
+                      {/* <h1 className="text-xl font-medium">
                         a.n Masjid Al-Barokah PBCVR (wakaf)
-                      </h1>
+                      </h1> */}
                     </div>
                   </div>
                   <div className="p-5 flex flex-row justify-center bg-white rounded-lg space-x-3">
@@ -509,24 +509,24 @@ export default function JadwalSolatHariIni() {
                       />
                     </div> */}
                     <div>
-                      <h1 className="font-black text-2xl">ZAKAT</h1>
+                      {/* <h1 className="font-black text-2xl">ZAKAT</h1> */}
                       <div className="flex space-x-2">
                         <Image
                           src={logoBSI}
-                          height={62}
+                          height={90}
                           // width={80}
                           alt="logo-BSI"
                         />
                         <div>
                           <p className="font-black text-2xl">300-4000-667</p>
                           <p className="font-medium text-xl">
-                            Kode Bank BSI: <b>451</b>
+                            a.n Masjid Al-Barokah PBCVR <b>(zakat)</b>
                           </p>
                         </div>
                       </div>
-                      <h1 className="text-xl font-medium">
+                      {/* <h1 className="text-xl font-medium">
                         a.n Masjid Al-Barokah PBCVR (zakat)
-                      </h1>
+                      </h1> */}
                     </div>
                   </div>
                 </div>

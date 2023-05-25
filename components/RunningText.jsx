@@ -43,7 +43,7 @@ export default function RunningText() {
         Masjid Al-Barokah PBCVR */}
       </marquee>
       <p className="font-medium">|</p>
-      <marquee className="text-3xl font-medium italic">
+      <marquee className="text-3xl font-medium">
         "Seseorang yang berjalan ke masjid, maka tiap langkah kakinya akan
         diberikan satu pahala, dihapuskan satu dosa, dan dinaikkan satu derajat
         oleh Allah SWT." (HR. Ibnu Majah dan Muslim).

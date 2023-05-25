@@ -10,7 +10,7 @@ export default function WaktushalatSyuruq() {
   useEffect(() => {
     // alarmRef.current.play()
     setTimeout(() => {
-      router.push('/waktuSyuruq')
+      router.push('waktuSyuruq')
     }, 5000)
   }, [])
 
