@@ -441,8 +441,8 @@ export default function JadwalSolatHariIni() {
                   />
                   {/* </div> */}
                 </div>
-                <div className="flex space-x-10 opacity-100 justify-center">
-                  <div className="p-5 flex flex-row justify-center bg-white rounded-lg space-x-3">
+                <div className="flex lg:flex-row md:flex-row sm:flex-col flex-col lg:space-x-10 md:space-x-10 sm:space-x-0 space-x-0 lg:space-y-0 md:space-y-0 sm:space-y-5 space-y-5 justify-between">
+                  <div className="p-5 flex justify-center bg-white rounded-lg space-x-3">
                     {/* <div className="flex items-start">
                       <Image
                         src={BarcodeInfaq}
@@ -452,7 +452,7 @@ export default function JadwalSolatHariIni() {
                     </div> */}
                     <div>
                       {/* <h1 className="font-black text-2xl">INFAK</h1> */}
-                      <div className="flex space-x-2">
+                      <div className="flex space-x-2 items-center">
                         <Image
                           src={logoBSI}
                           height={90}
@@ -481,7 +481,7 @@ export default function JadwalSolatHariIni() {
                     </div> */}
                     <div>
                       {/* <h1 className="font-black text-2xl">WAKAF</h1> */}
-                      <div className="flex space-x-2">
+                      <div className="flex space-x-2 items-center">
                         <Image
                           src={logoBSI}
                           height={90}
@@ -510,7 +510,7 @@ export default function JadwalSolatHariIni() {
                     </div> */}
                     <div>
                       {/* <h1 className="font-black text-2xl">ZAKAT</h1> */}
-                      <div className="flex space-x-2">
+                      <div className="flex space-x-2 items-center">
                         <Image
                           src={logoBSI}
                           height={90}
