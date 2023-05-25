@@ -348,9 +348,9 @@ export default function JadwalSolatHariIni() {
 
             {/* Looping jadwal sholat */}
             {jadwalSholat.timings && (
-              <div className="pb-20 px-[5%] lg:pt-[2%] md:pt-[5%] sm:pt-44 pt-44 flex flex-col space-y-5">
+              <div className="pb-20 px-[5%] lg:pt-[6%] md:pt-[6%] sm:pt-44 pt-44 flex flex-col space-y-5">
                 {/* <div className="pb-20 px-[7%] lg:pt-[16%] md:pt-[16%] sm:pt-44 pt-44 flex flex-col space-y-5"> */}
-                <div className="flex space-x-2 items-center p-5 bg-gray-300 opacity-80 max-w-2xl rounded-xl mt-64">
+                <div className="flex space-x-2 items-center p-5 bg-gray-300 opacity-80 max-w-2xl rounded-lg mt-64">
                   {/* <button onClick={play}>Boop!</button> */}
                   <p className="lg:text-3xl md:text-3xl sm:text-lg text-lg font-bold">
                     Menuju
@@ -441,11 +441,18 @@ export default function JadwalSolatHariIni() {
                   />
                   {/* </div> */}
                 </div>
-                <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 grid-cols-1 gap-3 justify-center pt-12">
-                  <div className="p-5 flex flex-row justify-center bg-white rounded-lg space-x-1">
+                <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 grid-cols-1 gap-3 justify-center">
+                  <div className="p-5 flex flex-row justify-center bg-white rounded-lg space-x-3">
+                    <div className="flex items-start">
+                      <Image
+                        src={BarcodeInfaq}
+                        height={100}
+                        alt="barcode-infaq"
+                      />
+                    </div>
                     <div>
-                      <h1 className="font-bold text-xl">INFAK</h1>
-                      <div className="flex">
+                      <h1 className="font-black text-xl">INFAK</h1>
+                      <div className="flex space-x-2">
                         <Image
                           src={logoBSI}
                           height={50}
@@ -453,7 +460,7 @@ export default function JadwalSolatHariIni() {
                           alt="logo-BSI"
                         />
                         <div>
-                          <p className="font-bold text-lg">300-4000-888</p>
+                          <p className="font-black text-lg">300-4000-888</p>
                           <p>
                             Kode Bank BSI: <b>451</b>
                           </p>
@@ -463,18 +470,18 @@ export default function JadwalSolatHariIni() {
                         a.n Masjid Al-Barokah PBCVR (infak)
                       </h1>
                     </div>
+                  </div>
+                  <div className="p-5 flex flex-row justify-center bg-white rounded-lg space-x-3">
                     <div className="flex items-start">
                       <Image
-                        src={BarcodeInfaq}
+                        src={BarcodeWakaf}
                         height={100}
-                        alt="barcode-infaq"
+                        alt="barcode-wakaf"
                       />
                     </div>
-                  </div>
-                  <div className="p-5 flex flex-row justify-center bg-white rounded-lg space-x-1">
                     <div>
-                      <h1 className="font-bold text-xl">WAKAF</h1>
-                      <div className="flex">
+                      <h1 className="font-black text-xl">WAKAF</h1>
+                      <div className="flex space-x-2">
                         <Image
                           src={logoBSI}
                           height={50}
@@ -482,7 +489,7 @@ export default function JadwalSolatHariIni() {
                           alt="logo-BSI"
                         />
                         <div>
-                          <p className="font-bold text-lg">300-4000-567</p>
+                          <p className="font-black text-lg">300-4000-567</p>
                           <p>
                             Kode Bank BSI: <b>451</b>
                           </p>
@@ -492,18 +499,18 @@ export default function JadwalSolatHariIni() {
                         a.n Masjid Al-Barokah PBCVR (wakaf)
                       </h1>
                     </div>
+                  </div>
+                  <div className="p-5 flex flex-row justify-center bg-white rounded-lg space-x-3">
                     <div className="flex items-start">
                       <Image
-                        src={BarcodeWakaf}
+                        src={BarcodeZakat}
                         height={100}
-                        alt="barcode-wakaf"
+                        alt="barcode-zakat"
                       />
                     </div>
-                  </div>
-                  <div className="p-5 flex flex-row justify-center bg-white rounded-lg space-x-1">
                     <div>
-                      <h1 className="font-bold text-xl">ZAKAT</h1>
-                      <div className="flex">
+                      <h1 className="font-black text-xl">ZAKAT</h1>
+                      <div className="flex space-x-2">
                         <Image
                           src={logoBSI}
                           height={50}
@@ -511,7 +518,7 @@ export default function JadwalSolatHariIni() {
                           alt="logo-BSI"
                         />
                         <div>
-                          <p className="font-bold text-lg">300-4000-667</p>
+                          <p className="font-black text-lg">300-4000-667</p>
                           <p>
                             Kode Bank BSI: <b>451</b>
                           </p>
@@ -520,13 +527,6 @@ export default function JadwalSolatHariIni() {
                       <h1 className="text-sm">
                         a.n Masjid Al-Barokah PBCVR (zakat)
                       </h1>
-                    </div>
-                    <div className="flex items-start">
-                      <Image
-                        src={BarcodeZakat}
-                        height={100}
-                        alt="barcode-zakat"
-                      />
                     </div>
                   </div>
                 </div>
