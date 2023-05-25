@@ -6,9 +6,13 @@ export default function RunningText() {
         Pukul 16.00 s/d Selesai | Mengaji Al-Quran (Anak), Setiap Senin, Selasa,
         Rabu. Pukul 18.00 s/d Selesai | Tadabur & Tahsin Quran, Setiap Jumat.
         Pukul 15.30 s/d Selesai | NGOPI! Ngobrol Perkara Iman, Setiap Ahad.
-        Pukul 05.00 s/d Selesai
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        <b>Rekening Infak Kebutuhan Masjid: </b>
+        Pukul 05.00 s/d Selesai &emsp;&emsp;&emsp;
+        <b>PROGRAM MASJID:</b> Mengaji Iqra (Anak), Setiap Senin, Selasa, Rabu.
+        Pukul 16.00 s/d Selesai | Mengaji Al-Quran (Anak), Setiap Senin, Selasa,
+        Rabu. Pukul 18.00 s/d Selesai | Tadabur & Tahsin Quran, Setiap Jumat.
+        Pukul 15.30 s/d Selesai | NGOPI! Ngobrol Perkara Iman, Setiap Ahad.
+        Pukul 05.00 s/d Selesai &emsp;&emsp;&emsp;
+        {/* <b>Rekening Infak Kebutuhan Masjid: </b>
         Bank Syariah Indonesia <b>BSI: 300-4000-888</b> Kode bank: 451 a.n
         Masjid Al-Barokah PBCVR
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -22,9 +26,9 @@ export default function RunningText() {
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         <b>Rekening Zakat Maal/Fitrah/Penghasilan: </b>
         Bank Syariah Indonesia <b>BSI: 300-4000-667</b> Kode bank: 451 a.n
-        Masjid Al-Barokah PBCVR
+        Masjid Al-Barokah PBCVR */}
       </marquee>
-      <p>|</p>
+      <p className="font-medium">|</p>
       <marquee className="text-3xl font-medium">
         "Seseorang yang berjalan ke masjid, maka tiap langkah kakinya akan
         diberikan satu pahala, dihapuskan satu dosa, dan dinaikkan satu derajat

@@ -79,7 +79,7 @@ export default function IqomahMaghrib() {
     const minutes = getTickingTime()
     const setMinutes = updateMinute()
 
-    if (minutes === 0 && seconds === 0) {
+    if (minutes === 0 && seconds === 1) {
       router.push('waktushalat')
       // alarmRef.current.play()
       // timeUp()

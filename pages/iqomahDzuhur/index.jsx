@@ -79,7 +79,7 @@ export default function Countdown() {
     const minutes = getTickingTime()
     const setMinutes = updateMinute()
 
-    if (minutes === 0 && seconds === 8) {
+    if (minutes === 0 && seconds === 1) {
       router.push('waktushalat')
       // timeUp()
       // setTimeout(() => {
