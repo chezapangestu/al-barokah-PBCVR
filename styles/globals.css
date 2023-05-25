@@ -51,6 +51,21 @@ strong {
   background-color: #011245;
 }
 
+ngaji-iqro {
+  color: #00b8a9;
+}
+
+ngaji-quran {
+  color: #f8f3d4;
+}
+
+tadabbur-tahsin {
+  color: #f6416c;
+}
+
+ngopi-kajian {
+  color: #ffde7d;
+}
 /* @font-face {
   font-family: Mushaf;
   src: url('/fonts/mushaf.ttf');

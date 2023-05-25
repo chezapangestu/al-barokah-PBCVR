@@ -455,18 +455,18 @@ export default function JadwalSolatHariIni() {
                       <div className="flex space-x-2">
                         <Image
                           src={logoBSI}
-                          height={50}
+                          height={62}
                           // width={80}
                           alt="logo-BSI"
                         />
                         <div>
                           <p className="font-black text-2xl">300-4000-888</p>
-                          <p className="font-medium text-lg">
+                          <p className="font-medium text-xl">
                             Kode Bank BSI: <b>451</b>
                           </p>
                         </div>
                       </div>
-                      <h1 className="text-md font-medium">
+                      <h1 className="text-xl font-medium">
                         a.n Masjid Al-Barokah PBCVR (infak)
                       </h1>
                     </div>
@@ -484,18 +484,18 @@ export default function JadwalSolatHariIni() {
                       <div className="flex space-x-2">
                         <Image
                           src={logoBSI}
-                          height={50}
+                          height={62}
                           // width={80}
                           alt="logo-BSI"
                         />
                         <div>
                           <p className="font-black text-2xl">300-4000-567</p>
-                          <p className="font-medium text-lg">
+                          <p className="font-medium text-xl">
                             Kode Bank BSI: <b>451</b>
                           </p>
                         </div>
                       </div>
-                      <h1 className="text-md font-medium">
+                      <h1 className="text-xl font-medium">
                         a.n Masjid Al-Barokah PBCVR (wakaf)
                       </h1>
                     </div>
@@ -513,18 +513,18 @@ export default function JadwalSolatHariIni() {
                       <div className="flex space-x-2">
                         <Image
                           src={logoBSI}
-                          height={50}
+                          height={62}
                           // width={80}
                           alt="logo-BSI"
                         />
                         <div>
                           <p className="font-black text-2xl">300-4000-667</p>
-                          <p className="font-medium text-lg">
+                          <p className="font-medium text-xl">
                             Kode Bank BSI: <b>451</b>
                           </p>
                         </div>
                       </div>
-                      <h1 className="text-md font-medium">
+                      <h1 className="text-xl font-medium">
                         a.n Masjid Al-Barokah PBCVR (zakat)
                       </h1>
                     </div>
