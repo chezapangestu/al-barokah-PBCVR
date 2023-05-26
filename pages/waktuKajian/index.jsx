@@ -4,6 +4,7 @@ import Image from 'next/image'
 import thumbnail from '../../public/pict/Thumbnail Jumatan 1920x1080.jpg'
 
 export default function WaktuKajian() {
+  const router = useRouter()
   useEffect(() => {
     setTimeout(() => {
       router.push('/')
