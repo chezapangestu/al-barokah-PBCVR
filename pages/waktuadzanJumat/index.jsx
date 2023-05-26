@@ -8,7 +8,7 @@ export default function WaktuadzanJumat() {
   useEffect(() => {
     alarmRef.current.play()
     setTimeout(() => {
-      router.push('/')
+      router.push('waktuKajian')
     }, 300000)
   }, [])
   return (
