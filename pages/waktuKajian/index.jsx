@@ -5,11 +5,11 @@ import thumbnail from '../../public/pict/Thumbnail Kajian.jpg'
 
 export default function WaktuKajian() {
   const router = useRouter()
-  useEffect(() => {
-    setTimeout(() => {
-      router.push('/')
-    }, 900000)
-  }, [])
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     router.push('/')
+  //   }, 900000)
+  // }, [])
   return (
     <div>
       <Image src={thumbnail} alt="banner-kajian" height={890}></Image>
