@@ -19,7 +19,7 @@ export default function Waktushalat() {
   useEffect(() => {
     alarmRef.current.play()
     setTimeout(() => {
-      router.push('/')
+      router.push('waktuKajian')
     }, 300000)
   }, [])
 
