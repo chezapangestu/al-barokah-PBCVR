@@ -20,14 +20,15 @@ export default function WaktuSyuruq() {
   }, [])
 
   return (
-    <div className="syuruq-main py-[114px]">
+    // <div className="syuruq-main py-[114px]">
+    <div className="syuruq-main py-[90px]">
       <Alarm ref={alarmRef} />
       <div className="flex flex-col bg-black opacity-75 text-white p-20">
         <div className="px-10 space-y-28">
           <p className="font-medium text-4xl">
             Dari Abu Umamah, Rasulullah shallallahu ‘alaihi wa sallam bersabda,
           </p>
-          <h1 className="text-5xl font-base select-none text-center">
+          <h1 className="text-5xl font-mushaf leading-normal text-center">
             مَنْ صَلَّى صَلاةَ الصُّبْحِ فِي مَسْجِدِ جَمَاعَةٍ يَثْبُتُ فِيهِ
             حَتَّى يُصَلِّيَ سُبْحَةَ الضُّحَى، كَانَ كَأَجْرِ حَاجٍّ، أَوْ
             مُعْتَمِرٍ تَامًّا حَجَّتُهُ وَعُمْرَتُهُ
