@@ -60,7 +60,7 @@ export default function JadwalSolatHariIni() {
     const query = new URLSearchParams({
       ...coordinates,
       method: 15,
-      tune: '-2,-2,4,2,1,6,0,-2,-3',
+      tune: '-3,-3,3,3,1,7,0,-2,-3',
     })
     const apiURL = `https://api.aladhan.com/v1/timings/${today}-${mm}-${yyyy}?${query}`
 
