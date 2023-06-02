@@ -15,7 +15,7 @@ export default function WaktushalatSyuruq() {
   }, [])
 
   return (
-    <div className="bg-white-900 font-inter p-[10%]">
+    <div className="bg-white-900 font-inter p-[15%]">
       <Alarm ref={alarmRef} />
       <div className="">
         <h1 className="text-[10rem] font-bold select-none text-center animate-pulse">
