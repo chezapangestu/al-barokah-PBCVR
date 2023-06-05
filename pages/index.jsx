@@ -160,7 +160,8 @@ export default function JadwalSolatHariIni() {
       })
       .catch(() => {
         setLoading(false)
-        setError(true)
+        // setError(true)
+        setJadwalSholat(dataManual)
       })
   }, [today, coordinates])
 
@@ -292,10 +293,10 @@ export default function JadwalSolatHariIni() {
       <div className="hero-main">
         <Alarm ref={alarmRef} />
         {/* <FullScreen handle={handle}> */}
-        {loading && <Loading message="Memuat jadwal sholat..." />}
-        {error && (
+        {/* {loading && <Loading message="Memuat jadwal sholat..." />} */}
+        {/* {error && (
           <ErrorCard message="Gagal memuat data, silakan periksa koneksi internet Anda lalu refresh halaman ini." />
-        )}
+        )} */}
 
         {/* Set Display Map */}
         <div
