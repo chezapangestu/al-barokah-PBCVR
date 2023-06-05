@@ -2,22 +2,22 @@ import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { FullScreen, useFullScreenHandle } from 'react-full-screen'
-import ErrorCard from '../components/ErrorCards'
-import JadwalSholatCard from '../components/JadwalSholatCard'
-import Layout from '../components/Layouts'
-import Loading from '../components/Loading'
-import Tracker from '../components/Tracker'
-import { coords } from '../constants/location'
-import { indonesianDate, indonesianName } from '../utils/jadwal-sholat'
-import LimaWaktuShalat from '../components/LimaWaktuShalat'
-import logoAlBarokah from '../public/pict/logo-al-barokah-192x192.png'
-import BottomNavigation from '../components/BottomNavigation'
-import RunningText from '../components/RunningText'
-import Alarm from '../components/Alarm'
-import BarcodeInfaq from '../public/pict/Barcode - Infaq.jpg'
-import BarcodeWakaf from '../public/pict/Barcode - Wakaf.jpg'
-import BarcodeZakat from '../public/pict/Barcode - Zakat.jpg'
-import logoBSI from '../public/pict/logo-bsi.png'
+import ErrorCard from '../../components/ErrorCards'
+import JadwalSholatCard from '../../components/JadwalSholatCard'
+import Layout from '../../components/Layouts'
+import Loading from '../../components/Loading'
+import Tracker from '../../components/Tracker'
+import { coords } from '../../constants/location'
+import { indonesianDate, indonesianName } from '../../utils/jadwal-sholat'
+import LimaWaktuShalat from '../../components/LimaWaktuShalat'
+import logoAlBarokah from '../../public/pict/logo-al-barokah-192x192.png'
+import BottomNavigation from '../../components/BottomNavigation'
+import RunningText from '../../components/RunningText'
+import Alarm from '../../components/Alarm'
+import BarcodeInfaq from '../../public/pict/Barcode - Infaq.jpg'
+import BarcodeWakaf from '../../public/pict/Barcode - Wakaf.jpg'
+import BarcodeZakat from '../../public/pict/Barcode - Zakat.jpg'
+import logoBSI from '../../public/pict/logo-bsi.png'
 
 // import useSound from 'use-sound'
 // import beepSfx from '../public/alarm.mp3'
@@ -59,9 +59,9 @@ export default function JadwalSolatHariIni() {
       Fajr: '04:35',
       Sunrise: '05:59',
       Dhuhr: '11:51',
-      Asr: '15:12',
+      Asr: '15:11',
       Maghrib: '17:47',
-      Isha: '18:57',
+      Isha: '18:56',
       Imsak: '04:25',
       Midnight: '23:45',
     },
@@ -153,8 +153,7 @@ export default function JadwalSolatHariIni() {
         delete data.timings['Lastthird'] // Menghapus waktu Lastthird
         // delete data.timings['Midnight'] // Menghapus waktu Midnight "TAHAJUD"
         // console.log(data.timings['Sunset'])
-        // console.log(data)
-        // setJadwalSholat(data)
+        console.log(data)
         setJadwalSholat(dataManual)
         setLoading(false)
       })
