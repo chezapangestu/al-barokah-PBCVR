@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
-import thumbnail from '../../public/pict/Thumbnail Youtube 1920x1080 - Ust Hervi.jpg'
+import thumbnail from '../../public/pict/Thumbnail Youtube 1920x1080 - Ust Ulum.jpg'
 
 export default function WaktuStillKajian() {
   return (
