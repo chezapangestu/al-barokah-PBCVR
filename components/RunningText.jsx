@@ -9,17 +9,25 @@ export default function RunningText() {
         <p>Masjid</p> &nbsp;
         <p>AlBarokah</p>
       </div> */}
+      <div className="flex space-x-2">
+        <p className="text-3xl font-medium">
+          <b>PROGRAM</b>
+        </p>
+        <p className="text-3xl font-medium">
+          <b>MASJID:</b>
+        </p>
+      </div>
       <marquee className="text-3xl font-medium">
-        <b>PROGRAM MASJID:</b> <ngaji-iqro>Mengaji Iqra (Anak),</ngaji-iqro>{' '}
-        Setiap Senin, Selasa, Rabu. Pukul 16.00 s/d Selesai |{' '}
+        <ngaji-iqro>Mengaji Iqra (Anak),</ngaji-iqro> Setiap Senin, Selasa,
+        Rabu. Pukul 16.00 s/d Selesai |{' '}
         <ngaji-quran>Mengaji Al-Quran (Anak),</ngaji-quran> Setiap Senin,
         Selasa, Rabu. Pukul 18.00 s/d Selesai |{' '}
         <tadabbur-tahsin>Tadabbur & Tahsin Quran,</tadabbur-tahsin> Setiap
         Jumat. Pukul 15.30 s/d Selesai |{' '}
         <ngopi-kajian>NGOPI! Ngobrol Perkara Iman,</ngopi-kajian> Setiap Ahad.
         Pukul 05.00 s/d Selesai &emsp;&emsp;&emsp;
-        <b>PROGRAM MASJID:</b> <ngaji-iqro>Mengaji Iqra (Anak),</ngaji-iqro>{' '}
-        Setiap Senin, Selasa, Rabu. Pukul 16.00 s/d Selesai |{' '}
+        <ngaji-iqro>Mengaji Iqra (Anak),</ngaji-iqro> Setiap Senin, Selasa,
+        Rabu. Pukul 16.00 s/d Selesai |{' '}
         <ngaji-quran>Mengaji Al-Quran (Anak),</ngaji-quran> Setiap Senin,
         Selasa, Rabu. Pukul 18.00 s/d Selesai |{' '}
         <tadabbur-tahsin>Tadabbur & Tahsin Quran,</tadabbur-tahsin> Setiap
@@ -43,6 +51,11 @@ export default function RunningText() {
         Masjid Al-Barokah PBCVR */}
       </marquee>
       <p className="font-medium">|</p>
+      <div className="flex space-x-2">
+        <p className="text-3xl font-medium">
+          <b>HADITS:</b>
+        </p>
+      </div>
       <marquee className="text-3xl font-medium">
         "Seseorang yang berjalan ke masjid, maka tiap langkah kakinya akan
         diberikan satu pahala, dihapuskan satu dosa, dan dinaikkan satu derajat

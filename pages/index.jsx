@@ -57,10 +57,10 @@ export default function JadwalSolatHariIni() {
   const dataManual = {
     timings: {
       Fajr: '04:35',
-      Sunrise: '05:59',
-      Dhuhr: '11:51',
+      Sunrise: '06:00',
+      Dhuhr: '11:52',
       Asr: '15:12',
-      Maghrib: '17:47',
+      Maghrib: '17:48',
       Isha: '18:57',
       Imsak: '04:25',
       Midnight: '23:45',
@@ -71,7 +71,7 @@ export default function JadwalSolatHariIni() {
       hijri: {
         date: '16-11-1444',
         format: 'DD-MM-YYYY',
-        day: '17',
+        day: '19',
         weekday: {
           en: 'Al Athnayn',
           ar: 'الاثنين',
@@ -140,7 +140,7 @@ export default function JadwalSolatHariIni() {
     const query = new URLSearchParams({
       ...coordinates,
       method: 15,
-      tune: '-3,-3,3,3,2,7,0,-1,-3',
+      tune: '-3,-3,4,4,2,7,0,-2,-3',
     })
     const apiURL = `https://api.aladhan.com/v1/timings/${today}-${mm}-${yyyy}?${query}`
 
