@@ -56,22 +56,22 @@ export default function JadwalSolatHariIni() {
 
   const dataManual = {
     timings: {
-      Fajr: '04:36',
-      Sunrise: '06:00',
-      Dhuhr: '11:52',
-      Asr: '15:13',
-      Maghrib: '17:48',
-      Isha: '18:58',
-      Imsak: '04:26',
+      Fajr: '04:37',
+      Sunrise: '06:02',
+      Dhuhr: '11:54',
+      Asr: '15:14',
+      Maghrib: '17:49',
+      Isha: '18:59',
+      Imsak: '04:27',
       Midnight: '23:45',
     },
     date: {
-      readable: '05 Jun 2023',
+      readable: '17 Jun 2023',
       timestamp: '1685923200',
       hijri: {
         date: '16-11-1444',
         format: 'DD-MM-YYYY',
-        day: '21',
+        day: '28',
         weekday: {
           en: 'Al Athnayn',
           ar: 'الاثنين',
