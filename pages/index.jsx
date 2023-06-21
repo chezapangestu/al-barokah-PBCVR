@@ -18,6 +18,7 @@ import BarcodeInfaq from '../public/pict/Barcode - Infaq.jpg'
 import BarcodeWakaf from '../public/pict/Barcode - Wakaf.jpg'
 import BarcodeZakat from '../public/pict/Barcode - Zakat.jpg'
 import logoBSI from '../public/pict/logo-bsi.png'
+import Sidebar from '../components/Sidebar'
 
 // import useSound from 'use-sound'
 // import beepSfx from '../public/alarm.mp3'
@@ -56,30 +57,30 @@ export default function JadwalSolatHariIni() {
 
   const dataManual = {
     timings: {
-      Fajr: '04:37',
-      Sunrise: '06:02',
+      Fajr: '04:38',
+      Sunrise: '06:03',
       Dhuhr: '11:54',
-      Asr: '15:14',
-      Maghrib: '17:49',
-      Isha: '18:59',
-      Imsak: '04:27',
-      Midnight: '23:45',
+      Asr: '15:15',
+      Maghrib: '17:50',
+      Isha: '19:00',
+      Imsak: '04:28',
+      Midnight: '23:48',
     },
     date: {
-      readable: '17 Jun 2023',
-      timestamp: '1685923200',
+      readable: '21 Jun 2023',
+      timestamp: '1687305600',
       hijri: {
-        date: '16-11-1444',
+        date: '02-12-1444',
         format: 'DD-MM-YYYY',
-        day: '28',
+        day: '02',
         weekday: {
-          en: 'Al Athnayn',
-          ar: 'الاثنين',
+          en: "Al Arba'a",
+          ar: 'الاربعاء',
         },
         month: {
-          number: 11,
-          en: 'Dhū al-Qaʿdah',
-          ar: 'ذوالقعدة',
+          number: 12,
+          en: 'Dhū al-Ḥijjah',
+          ar: 'ذوالحجة',
         },
         year: '1444',
         designation: {
@@ -89,11 +90,11 @@ export default function JadwalSolatHariIni() {
         holidays: [],
       },
       gregorian: {
-        date: '05-06-2023',
+        date: '21-06-2023',
         format: 'DD-MM-YYYY',
-        day: '05',
+        day: '21',
         weekday: {
-          en: 'Monday',
+          en: 'Wednesday',
         },
         month: {
           number: 6,
@@ -125,10 +126,10 @@ export default function JadwalSolatHariIni() {
         Fajr: '-3',
         Sunrise: '3',
         Dhuhr: '3',
-        Asr: '1',
+        Asr: '2',
         Maghrib: '7',
         Sunset: 0,
-        Isha: '-2',
+        Isha: '-1',
         Midnight: '-3',
       },
     },
@@ -156,6 +157,7 @@ export default function JadwalSolatHariIni() {
         // console.log(data)
         // setJadwalSholat(data)
         // setJadwalSholat(data)
+        // console.log(data)
         setJadwalSholat(data)
         setLoading(false)
       })
@@ -490,36 +492,43 @@ export default function JadwalSolatHariIni() {
                     title={'Imsak'}
                     value={jadwalSholat.timings.Imsak}
                     variant={'bg-imsak'}
+                    url={''}
                   />
                   <LimaWaktuShalat
                     title={'Subuh'}
                     value={jadwalSholat.timings.Fajr}
                     variant={'bg-subuh'}
+                    url={'waktuadzanSubuh'}
                   />
                   <LimaWaktuShalat
                     title={'Syuruq'}
                     value={jadwalSholat.timings.Sunrise}
                     variant={'bg-isyraq'}
+                    url={'waktushalatSyuruq'}
                   />
                   <LimaWaktuShalat
                     title={'Dzuhur'}
                     value={jadwalSholat.timings.Dhuhr}
                     variant={'bg-dzuhur'}
+                    url={'waktuadzanDzuhur'}
                   />
                   <LimaWaktuShalat
                     title={'Ashar'}
                     value={jadwalSholat.timings.Asr}
                     variant={'bg-ashar'}
+                    url={'waktuadzanAshar'}
                   />
                   <LimaWaktuShalat
                     title={'Maghrib'}
                     value={jadwalSholat.timings.Maghrib}
                     variant={'bg-maghrib'}
+                    url={'waktuadzanMaghrib'}
                   />
                   <LimaWaktuShalat
                     title={"Isya'"}
                     value={jadwalSholat.timings.Isha}
                     variant={'bg-isya'}
+                    url={'waktuadzanIsya'}
                   />
                   {/* </div> */}
                 </div>
@@ -634,6 +643,7 @@ export default function JadwalSolatHariIni() {
           preload="none"
         />
         {/* <BottomNavigation /> */}
+        <Sidebar />
         <RunningText />
         {/* </FullScreen> */}
       </div>
