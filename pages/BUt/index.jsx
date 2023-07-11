@@ -18,6 +18,7 @@ import BarcodeInfaq from '../../public/pict/Barcode - Infaq.jpg'
 import BarcodeWakaf from '../../public/pict/Barcode - Wakaf.jpg'
 import BarcodeZakat from '../../public/pict/Barcode - Zakat.jpg'
 import logoBSI from '../../public/pict/logo-bsi.png'
+import Sidebar from '../../components/Sidebar'
 
 // import useSound from 'use-sound'
 // import beepSfx from '../public/alarm.mp3'
@@ -56,30 +57,30 @@ export default function JadwalSolatHariIni() {
 
   const dataManual = {
     timings: {
-      Fajr: '04:35',
-      Sunrise: '05:59',
-      Dhuhr: '11:51',
-      Asr: '15:11',
-      Maghrib: '17:47',
-      Isha: '18:56',
-      Imsak: '04:25',
-      Midnight: '23:45',
+      Fajr: '04:42',
+      Sunrise: '06:06',
+      Dhuhr: '11:58',
+      Asr: '15:19',
+      Maghrib: '17:55',
+      Isha: '19:04',
+      Imsak: '04:32',
+      Midnight: '23:52',
     },
     date: {
-      readable: '05 Jun 2023',
-      timestamp: '1685923200',
+      readable: '12 Jul 2023',
+      timestamp: '1689120000',
       hijri: {
-        date: '16-11-1444',
+        date: '23-12-1444',
         format: 'DD-MM-YYYY',
-        day: '16',
+        day: '23',
         weekday: {
-          en: 'Al Athnayn',
-          ar: 'الاثنين',
+          en: "Al Arba'a",
+          ar: 'الاربعاء',
         },
         month: {
-          number: 11,
-          en: 'Dhū al-Qaʿdah',
-          ar: 'ذوالقعدة',
+          number: 12,
+          en: 'Dhū al-Ḥijjah',
+          ar: 'ذوالحجة',
         },
         year: '1444',
         designation: {
@@ -89,15 +90,15 @@ export default function JadwalSolatHariIni() {
         holidays: [],
       },
       gregorian: {
-        date: '05-06-2023',
+        date: '12-07-2023',
         format: 'DD-MM-YYYY',
-        day: '05',
+        day: '12',
         weekday: {
-          en: 'Monday',
+          en: 'Wednesday',
         },
         month: {
-          number: 6,
-          en: 'June',
+          number: 7,
+          en: 'July',
         },
         year: '2023',
         designation: {
@@ -153,13 +154,16 @@ export default function JadwalSolatHariIni() {
         delete data.timings['Lastthird'] // Menghapus waktu Lastthird
         // delete data.timings['Midnight'] // Menghapus waktu Midnight "TAHAJUD"
         // console.log(data.timings['Sunset'])
-        console.log(data)
-        setJadwalSholat(dataManual)
+        // console.log(data)
+        // setJadwalSholat(data)
+        // setJadwalSholat(data)
+        // console.log(data)
+        setJadwalSholat(data)
         setLoading(false)
       })
       .catch(() => {
         setLoading(false)
-        setError(true)
+        setJadwalSholat(dataManual)
       })
   }, [today, coordinates])
 
@@ -213,76 +217,76 @@ export default function JadwalSolatHariIni() {
   })
 
   // Memutar audio adzan
-  useEffect(() => {
-    const adzan = document.getElementById('adzan')
-    document.body.onclick = () => {
-      adzan.play()
-      adzan.pause()
-    }
+  // useEffect(() => {
+  //   const adzan = document.getElementById('adzan')
+  //   document.body.onclick = () => {
+  //     adzan.play()
+  //     adzan.pause()
+  //   }
 
-    const { name, countDown } = next
-    // console.log(hariIni)
-    switch (name) {
-      case 'Sunrise':
-        if (countDown === '00:00:08' && name === 'Sunrise') {
-          alarmRef.current.play()
-          setTimeout(() => {
-            router.push('waktushalatSyuruq')
-          }, 8000)
-        }
-      case 'Fajr':
-        if (countDown === '00:00:08' && name === 'Fajr') {
-          alarmRef.current.play()
-          setTimeout(() => {
-            router.push('waktuadzanSubuh')
-          }, 8000)
-        }
-      case 'Dhuhr':
-        // UNTUK HARI JUMAT SHALAT JUMAT
-        if (countDown === '00:00:08' && name === 'Dhuhr' && hariIni === 5) {
-          alarmRef.current.play()
-          setTimeout(() => {
-            router.push('waktuadzanJumat')
-          }, 8000)
-        } else if (
-          countDown === '00:00:08' &&
-          name === 'Dhuhr' &&
-          hariIni !== 5
-        ) {
-          alarmRef.current.play()
-          setTimeout(() => {
-            router.push('waktuadzanDzuhur')
-          }, 8000)
-        }
-      case 'Asr':
-        if (countDown === '00:00:08' && name === 'Asr') {
-          alarmRef.current.play()
-          setTimeout(() => {
-            router.push('waktuadzanAshar')
-          }, 8000)
-        }
-      case 'Maghrib':
-        if (countDown === '00:00:08' && name === 'Maghrib') {
-          alarmRef.current.play()
-          setTimeout(() => {
-            router.push('waktuadzanMaghrib')
-          }, 8000)
-        }
-      case 'Isha':
-        if (countDown === '00:00:08' && name === 'Isha') {
-          alarmRef.current.play()
-          setTimeout(() => {
-            router.push('waktuadzanIsya')
-          }, 8000)
-        }
+  //   const { name, countDown } = next
+  //   // console.log(hariIni)
+  //   switch (name) {
+  //     case 'Sunrise':
+  //       if (countDown === '00:00:08' && name === 'Sunrise') {
+  //         alarmRef.current.play()
+  //         setTimeout(() => {
+  //           router.push('waktushalatSyuruq')
+  //         }, 8000)
+  //       }
+  //     case 'Fajr':
+  //       if (countDown === '00:00:08' && name === 'Fajr') {
+  //         alarmRef.current.play()
+  //         setTimeout(() => {
+  //           router.push('waktuadzanSubuh')
+  //         }, 8000)
+  //       }
+  //     case 'Dhuhr':
+  //       // UNTUK HARI JUMAT SHALAT JUMAT
+  //       if (countDown === '00:00:08' && name === 'Dhuhr' && hariIni === 5) {
+  //         alarmRef.current.play()
+  //         setTimeout(() => {
+  //           router.push('waktuadzanJumat')
+  //         }, 8000)
+  //       } else if (
+  //         countDown === '00:00:08' &&
+  //         name === 'Dhuhr' &&
+  //         hariIni !== 5
+  //       ) {
+  //         alarmRef.current.play()
+  //         setTimeout(() => {
+  //           router.push('waktuadzanDzuhur')
+  //         }, 8000)
+  //       }
+  //     case 'Asr':
+  //       if (countDown === '00:00:08' && name === 'Asr') {
+  //         alarmRef.current.play()
+  //         setTimeout(() => {
+  //           router.push('waktuadzanAshar')
+  //         }, 8000)
+  //       }
+  //     case 'Maghrib':
+  //       if (countDown === '00:00:08' && name === 'Maghrib') {
+  //         alarmRef.current.play()
+  //         setTimeout(() => {
+  //           router.push('waktuadzanMaghrib')
+  //         }, 8000)
+  //       }
+  //     case 'Isha':
+  //       if (countDown === '00:00:08' && name === 'Isha') {
+  //         alarmRef.current.play()
+  //         setTimeout(() => {
+  //           router.push('waktuadzanIsya')
+  //         }, 8000)
+  //       }
 
-        break
-      // adzan.play()
+  //       break
+  //     // adzan.play()
 
-      default:
-        break
-    }
-  })
+  //     default:
+  //       break
+  //   }
+  // })
 
   // const [play] = useSound(beepSfx)
 
@@ -291,10 +295,10 @@ export default function JadwalSolatHariIni() {
       <div className="hero-main">
         <Alarm ref={alarmRef} />
         {/* <FullScreen handle={handle}> */}
-        {loading && <Loading message="Memuat jadwal sholat..." />}
-        {error && (
+        {/* {loading && <Loading message="Memuat jadwal sholat..." />} */}
+        {/* {error && (
           <ErrorCard message="Gagal memuat data, silakan periksa koneksi internet Anda lalu refresh halaman ini." />
-        )}
+        )} */}
 
         {/* Set Display Map */}
         <div
@@ -488,36 +492,43 @@ export default function JadwalSolatHariIni() {
                     title={'Imsak'}
                     value={jadwalSholat.timings.Imsak}
                     variant={'bg-imsak'}
+                    url={''}
                   />
                   <LimaWaktuShalat
                     title={'Subuh'}
                     value={jadwalSholat.timings.Fajr}
                     variant={'bg-subuh'}
+                    url={'waktuadzanSubuh'}
                   />
                   <LimaWaktuShalat
                     title={'Syuruq'}
                     value={jadwalSholat.timings.Sunrise}
                     variant={'bg-isyraq'}
+                    url={'waktushalatSyuruq'}
                   />
                   <LimaWaktuShalat
                     title={'Dzuhur'}
                     value={jadwalSholat.timings.Dhuhr}
                     variant={'bg-dzuhur'}
+                    url={'waktuadzanDzuhur'}
                   />
                   <LimaWaktuShalat
                     title={'Ashar'}
                     value={jadwalSholat.timings.Asr}
                     variant={'bg-ashar'}
+                    url={'waktuadzanAshar'}
                   />
                   <LimaWaktuShalat
                     title={'Maghrib'}
                     value={jadwalSholat.timings.Maghrib}
                     variant={'bg-maghrib'}
+                    url={'waktuadzanMaghrib'}
                   />
                   <LimaWaktuShalat
                     title={"Isya'"}
                     value={jadwalSholat.timings.Isha}
                     variant={'bg-isya'}
+                    url={'waktuadzanIsya'}
                   />
                   {/* </div> */}
                 </div>
@@ -632,6 +643,7 @@ export default function JadwalSolatHariIni() {
           preload="none"
         />
         {/* <BottomNavigation /> */}
+        <Sidebar />
         <RunningText />
         {/* </FullScreen> */}
       </div>

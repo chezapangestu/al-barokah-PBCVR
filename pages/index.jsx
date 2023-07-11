@@ -57,22 +57,22 @@ export default function JadwalSolatHariIni() {
 
   const dataManual = {
     timings: {
-      Fajr: '04:38',
-      Sunrise: '06:03',
-      Dhuhr: '11:54',
-      Asr: '15:15',
-      Maghrib: '17:50',
-      Isha: '19:00',
-      Imsak: '04:28',
-      Midnight: '23:48',
+      Fajr: '04:42',
+      Sunrise: '06:06',
+      Dhuhr: '11:58',
+      Asr: '15:19',
+      Maghrib: '17:55',
+      Isha: '19:04',
+      Imsak: '04:32',
+      Midnight: '23:52',
     },
     date: {
-      readable: '21 Jun 2023',
-      timestamp: '1687305600',
+      readable: '12 Jul 2023',
+      timestamp: '1689120000',
       hijri: {
-        date: '02-12-1444',
+        date: '23-12-1444',
         format: 'DD-MM-YYYY',
-        day: '02',
+        day: '23',
         weekday: {
           en: "Al Arba'a",
           ar: 'الاربعاء',
@@ -90,15 +90,15 @@ export default function JadwalSolatHariIni() {
         holidays: [],
       },
       gregorian: {
-        date: '21-06-2023',
+        date: '12-07-2023',
         format: 'DD-MM-YYYY',
-        day: '21',
+        day: '12',
         weekday: {
           en: 'Wednesday',
         },
         month: {
-          number: 6,
-          en: 'June',
+          number: 7,
+          en: 'July',
         },
         year: '2023',
         designation: {
@@ -126,10 +126,10 @@ export default function JadwalSolatHariIni() {
         Fajr: '-3',
         Sunrise: '3',
         Dhuhr: '3',
-        Asr: '2',
+        Asr: '1',
         Maghrib: '7',
         Sunset: 0,
-        Isha: '-1',
+        Isha: '-2',
         Midnight: '-3',
       },
     },
@@ -141,7 +141,7 @@ export default function JadwalSolatHariIni() {
     const query = new URLSearchParams({
       ...coordinates,
       method: 15,
-      tune: '-3,-3,3,3,2,7,0,-1,-3',
+      tune: '-3,-3,3,3,1,7,0,-2,-3',
     })
     const apiURL = `https://api.aladhan.com/v1/timings/${today}-${mm}-${yyyy}?${query}`
 
